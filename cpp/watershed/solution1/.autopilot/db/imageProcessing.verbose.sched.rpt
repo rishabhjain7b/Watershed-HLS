@@ -1,0 +1,177 @@
+
+
+================================================================
+== Vivado HLS Report for 'imageProcessing'
+================================================================
+* Date:           Sun Apr 23 06:25:54 2023
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        watershed
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.606|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  263168|  263168|       514|          -|          -|   512|    no    |
+        | + Loop 1.1  |     512|     512|         1|          -|          -|   512|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (exitcond1)
+	3  / (!exitcond1)
+3 --> 
+	3  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.66>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([16 x i8]* @imageProcessing_str) nounwind"   --->   Operation 5 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%inputImage_r = alloca [262144 x i1], align 1" [segmentation.cpp:632]   --->   Operation 6 'alloca' 'inputImage_r' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%inputImage_g = alloca [262144 x i1], align 1" [segmentation.cpp:632]   --->   Operation 7 'alloca' 'inputImage_g' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%inputImage_b = alloca [262144 x i1], align 1" [segmentation.cpp:632]   --->   Operation 8 'alloca' 'inputImage_b' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%finalOutputImage_r = alloca [262144 x i1], align 1" [segmentation.cpp:633]   --->   Operation 9 'alloca' 'finalOutputImage_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%finalOutputImage_g = alloca [262144 x i1], align 1" [segmentation.cpp:633]   --->   Operation 10 'alloca' 'finalOutputImage_g' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%finalOutputImage_b = alloca [262144 x i1], align 1" [segmentation.cpp:633]   --->   Operation 11 'alloca' 'finalOutputImage_b' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.66ns)   --->   "br label %.loopexit" [segmentation.cpp:635]   --->   Operation 12 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 2.12>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i = phi i10 [ 0, %0 ], [ %i_12, %.loopexit.loopexit ]"   --->   Operation 13 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.70ns)   --->   "%exitcond1 = icmp eq i10 %i, -512" [segmentation.cpp:635]   --->   Operation 14 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512) nounwind"   --->   Operation 15 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (2.12ns)   --->   "%i_12 = add i10 %i, 1" [segmentation.cpp:635]   --->   Operation 16 'add' 'i_12' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %2, label %.preheader.preheader" [segmentation.cpp:635]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%tmp = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i, i9 0)" [segmentation.cpp:635]   --->   Operation 18 'bitconcatenate' 'tmp' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_90_cast = zext i19 %tmp to i20" [segmentation.cpp:636]   --->   Operation 19 'zext' 'tmp_90_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.66ns)   --->   "br label %.preheader" [segmentation.cpp:636]   --->   Operation 20 'br' <Predicate = (!exitcond1)> <Delay = 1.66>
+ST_2 : Operation 21 [2/2] (0.00ns)   --->   "call fastcc void @image_segmentation([262144 x i1]* %inputImage_r, [262144 x i1]* %inputImage_g, [262144 x i1]* %inputImage_b, [262144 x i1]* %finalOutputImage_r, [262144 x i1]* %finalOutputImage_g, [262144 x i1]* %finalOutputImage_b) nounwind" [segmentation.cpp:643]   --->   Operation 21 'call' <Predicate = (exitcond1)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 5.50>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%j = phi i10 [ %j_11, %1 ], [ 0, %.preheader.preheader ]"   --->   Operation 22 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (1.70ns)   --->   "%exitcond = icmp eq i10 %j, -512" [segmentation.cpp:636]   --->   Operation 23 'icmp' 'exitcond' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_47 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512) nounwind"   --->   Operation 24 'speclooptripcount' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (2.12ns)   --->   "%j_11 = add i10 %j, 1" [segmentation.cpp:636]   --->   Operation 25 'add' 'j_11' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.loopexit.loopexit, label %1" [segmentation.cpp:636]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_cast = zext i10 %j to i20" [segmentation.cpp:637]   --->   Operation 27 'zext' 'tmp_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (2.25ns)   --->   "%tmp_s = add i20 %tmp_90_cast, %tmp_cast" [segmentation.cpp:637]   --->   Operation 28 'add' 'tmp_s' <Predicate = (!exitcond)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_91_cast = zext i20 %tmp_s to i64" [segmentation.cpp:637]   --->   Operation 29 'zext' 'tmp_91_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%inputImage_r_addr = getelementptr [262144 x i1]* %inputImage_r, i64 0, i64 %tmp_91_cast" [segmentation.cpp:637]   --->   Operation 30 'getelementptr' 'inputImage_r_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%inputImage_g_addr = getelementptr [262144 x i1]* %inputImage_g, i64 0, i64 %tmp_91_cast" [segmentation.cpp:638]   --->   Operation 31 'getelementptr' 'inputImage_g_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%inputImage_b_addr = getelementptr [262144 x i1]* %inputImage_b, i64 0, i64 %tmp_91_cast" [segmentation.cpp:639]   --->   Operation 32 'getelementptr' 'inputImage_b_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (3.25ns)   --->   "store i1 true, i1* %inputImage_r_addr, align 1" [segmentation.cpp:637]   --->   Operation 33 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_3 : Operation 34 [1/1] (3.25ns)   --->   "store i1 false, i1* %inputImage_g_addr, align 1" [segmentation.cpp:638]   --->   Operation 34 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_3 : Operation 35 [1/1] (3.25ns)   --->   "store i1 true, i1* %inputImage_b_addr, align 1" [segmentation.cpp:639]   --->   Operation 35 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "br label %.preheader" [segmentation.cpp:636]   --->   Operation 36 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 37 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 38 [1/2] (0.00ns)   --->   "call fastcc void @image_segmentation([262144 x i1]* %inputImage_r, [262144 x i1]* %inputImage_g, [262144 x i1]* %inputImage_b, [262144 x i1]* %finalOutputImage_r, [262144 x i1]* %finalOutputImage_g, [262144 x i1]* %finalOutputImage_b) nounwind" [segmentation.cpp:643]   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "ret void" [segmentation.cpp:644]   --->   Operation 39 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', segmentation.cpp:635) [24]  (1.66 ns)
+
+ <State 2>: 2.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', segmentation.cpp:635) [24]  (0 ns)
+	'add' operation ('i', segmentation.cpp:635) [27]  (2.12 ns)
+
+ <State 3>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:636) [34]  (0 ns)
+	'add' operation ('tmp_s', segmentation.cpp:637) [41]  (2.25 ns)
+	'getelementptr' operation ('inputImage_r_addr', segmentation.cpp:637) [43]  (0 ns)
+	'store' operation (segmentation.cpp:637) of constant 1 on array 'inputImage.r', segmentation.cpp:632 [46]  (3.26 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

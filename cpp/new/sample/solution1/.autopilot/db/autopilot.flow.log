@@ -1,0 +1,1778 @@
+INFO-FLOW: Workspace /home/rijain/Workspace/Watershed/cpp/new/sample/solution1 opened at Sun Apr 23 06:42:06 PDT 2023
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.11 sec.
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.22 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.22 sec.
+Command     ap_source done; 0.23 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_hp.hlp 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xa7a12tcsg325-1q 
+Execute       add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute         get_default_platform 
+Execute         license_isbetapart xa7a12t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/aartix7/aartix7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.53 sec.
+Execute   set_part xa7a12tcsg325-1q 
+Execute     add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute       get_default_platform 
+Execute       license_isbetapart xa7a12t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/aartix7/aartix7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 10 -name default 
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     config_compile -blackbox  
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'segmentation.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling segmentation.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted segmentation.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "segmentation.cpp"   -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot" -I "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp" 
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E segmentation.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot -I /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp
+Command       clang done; 2.15 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp std=c++11 
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.7 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc" -hls  -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot" -I "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp"  -o "/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot -I /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/useless.bc
+Command       clang done; 1.87 sec.
+INFO-FLOW: Done: GCC PP time: 4.7 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp std=c++11 -directive=/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.24 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp std=c++11 -directive=/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.23 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/xilinx-dataflow-lawyer.segmentation.pp.0.cpp.diag.yml /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -- -std=c++11 -fhls -ferror-limit=0 -fstrict-dataflow > /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/xilinx-dataflow-lawyer.segmentation.pp.0.cpp.out.log 2> /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/xilinx-dataflow-lawyer.segmentation.pp.0.cpp.err.log 
+Command       ap_eval done; 0.45 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp std=c++11 
+Execute         ap_eval exec -ignorestderr /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/tidy-3.1.segmentation.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -- -std=c++11 -fhls -ferror-limit=0 > /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/tidy-3.1.segmentation.pp.0.cpp.out.log 2> /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/tidy-3.1.segmentation.pp.0.cpp.err.log 
+Command         ap_eval done; 0.64 sec.
+Execute         ap_eval exec -ignorestderr /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pp.0.cpp -- -std=c++11 -fhls -ferror-limit=0 > /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/xilinx-legacy-rewriter.segmentation.pp.0.cpp.out.log 2> /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/xilinx-legacy-rewriter.segmentation.pp.0.cpp.err.log 
+Command         ap_eval done; 0.61 sec.
+Command       tidy_31 done; 1.28 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pragma.1.cpp std=c++11 
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pragma.1.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.36 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pragma.2.cpp"  -std=c++11  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot" -I "/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.bc" 
+INFO-FLOW: exec /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.pragma.2.cpp -std=c++11 -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot -I /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.bc
+Command       clang done; 1.85 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/segmentation.g.bc -hls-opt -except-internalize imageProcessing -L/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/lib -lhlsm -lhlsmc++ -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 3.24 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 534.176 ; gain = 0.422 ; free physical = 22007 ; free virtual = 33659
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 534.176 ; gain = 0.422 ; free physical = 22007 ; free virtual = 33659
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.pp.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.92 sec.
+Execute         llvm-ld /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/lib -lfloatconversion -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 4.19 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top imageProcessing -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.0.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 47.25 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:00 ; elapsed = 00:01:07 . Memory (MB): peak = 1511.938 ; gain = 978.184 ; free physical = 21012 ; free virtual = 32700
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.1.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC2Ed10' into '_ZN9fp_structIdEC1Ed6' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_copysign<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:11) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'generic_copysign<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:13) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:193) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_copysign<double>' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:197) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:210) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::mantissa' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:90) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' into 'generic_cast_IEEE754<unsigned char, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, double>' into '__hls_fptoui_double_i8' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66) automatically.
+INFO: [XFORM 203-602] Inlining function 'round' into 'RGBtoGray<512, 512>132' (segmentation.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptoui_double_i8' into 'RGBtoGray<512, 512>132' (segmentation.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_isinf<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_isinf.h:16) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_isnan<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_isnan.h:16) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:224) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:226) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:228) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:230) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:232) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:234) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:236) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:323) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZNK9fp_structIdE4expvEv8' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:333) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:372) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:374) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:640) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'std::pow<float, int>' (/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath:377) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'std::pow<int, int>' (/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath:377) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::pow<float, int>' into 'thresholdOtsu<512, 512>' (segmentation.cpp:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::pow<int, int>' into 'thresholdOtsu<512, 512>' (segmentation.cpp:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::pow<int, int>' into 'euclideanDistance' (segmentation.cpp:253) automatically.
+INFO: [XFORM 203-602] Inlining function 'euclideanDistance' into 'distanceTransform<512, 512>' (segmentation.cpp:284) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:90) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<unsigned char, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, float>' into '__hls_fptoui_float_i8' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptoui_float_i8' into 'threshold<512, 512>' (segmentation.cpp:337) automatically.
+INFO: [XFORM 203-602] Inlining function 'minMaxLoc<512, 512>' into 'image_segmentation<512, 512>' (segmentation.cpp:605) automatically.
+INFO: [XFORM 203-602] Inlining function 'subtractPixels<512, 512>' into 'image_segmentation<512, 512>' (segmentation.cpp:611) automatically.
+Command         transform done; 5.71 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-77] The top function 'imageProcessing' (segmentation.cpp:627) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+Command         transform done; 0.95 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:06 ; elapsed = 00:01:13 . Memory (MB): peak = 1511.938 ; gain = 978.184 ; free physical = 20983 ; free virtual = 32687
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.g.1.bc to /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.1.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-102] Partitioning array 'queue' (segmentation.cpp:480) in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'neighbours' in dimension 2 automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC2Ed10' into '_ZN9fp_structIdEC1Ed6' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_copysign<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:11) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'generic_copysign<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:13) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:193) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_copysign<double>' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:197) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:210) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'generic_round<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_round<double>' into 'round' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::mantissa' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, double>' into 'generic_cast_IEEE754<unsigned char, double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, double>' into '__hls_fptoui_double_i8' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66) automatically.
+INFO: [XFORM 203-602] Inlining function 'round' into 'RGBtoGray<512, 512>' (segmentation.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptoui_double_i8' into 'RGBtoGray<512, 512>' (segmentation.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_isinf<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_isinf.h:16) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'generic_isnan<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_isnan.h:16) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:224) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:226) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:228) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:230) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:232) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:234) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:236) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZN9fp_structIdEC1Ed6' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:323) automatically.
+INFO: [XFORM 203-602] Inlining function '_ZNK9fp_structIdE4expvEv8' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:333) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:372) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:374) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:411) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:640) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'std::pow<float, int>' (/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath:377) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'std::pow<int, int>' (/u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath:377) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::pow<float, int>' into 'thresholdOtsu<512, 512>' (segmentation.cpp:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::pow<int, int>' into 'thresholdOtsu<512, 512>' (segmentation.cpp:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::pow<int, int>' into 'euclideanDistance' (segmentation.cpp:253) automatically.
+INFO: [XFORM 203-602] Inlining function 'euclideanDistance' into 'distanceTransform<512, 512>' (segmentation.cpp:284) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<unsigned char, float>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<unsigned char, float>' into '__hls_fptoui_float_i8' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptoui_float_i8' into 'threshold<512, 512>' (segmentation.cpp:337) automatically.
+INFO: [XFORM 203-602] Inlining function 'minMaxLoc<512, 512>' into 'image_segmentation<512, 512>' (segmentation.cpp:605) automatically.
+INFO: [XFORM 203-602] Inlining function 'threshold<512, 512>' into 'image_segmentation<512, 512>' (segmentation.cpp:608) automatically.
+INFO: [XFORM 203-602] Inlining function 'subtractPixels<512, 512>' into 'image_segmentation<512, 512>' (segmentation.cpp:611) automatically.
+Command         transform done; 37.99 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:518:17) to (segmentation.cpp:521:17) in function 'watershed_algorithm<512, 512>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:533:9) in function 'watershed_algorithm<512, 512>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:319:19) to (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:406:5) in function 'pow_reduce::pow_generic<double>'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:449:5) to (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:455:5) in function 'pow_reduce::pow_generic<double>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:487:26) to (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:656:5) in function 'pow_reduce::pow_generic<double>'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:157:43) to (segmentation.cpp:156:50) in function 'morphologyEx<512, 512, 0, 3, 2>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:180:47) to (segmentation.cpp:179:54) in function 'morphologyEx<512, 512, 0, 3, 2>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:222:51) to (segmentation.cpp:221:50) in function 'dilate<512, 512, 3, 3, 2>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:389:58) to (segmentation.cpp:391:17) in function 'connectedComponents<512, 512>'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (segmentation.cpp:32:38) to (segmentation.cpp:30:36) in function 'RGBtoGray<512, 512>'... converting 5 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:547) automatically.
+INFO: [XFORM 203-602] Inlining function 'makeBoundary<512, 512>' into 'image_segmentation<512, 512>' (segmentation.cpp:624) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'watershed_algorithm<512, 512>' (segmentation.cpp:480:17)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_pow.h:319)...7 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'morphologyEx<512, 512, 0, 3, 2>' (segmentation.cpp:118)...6 expression(s) balanced.
+Command         transform done; 14.69 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:58 ; elapsed = 00:02:06 . Memory (MB): peak = 1511.938 ; gain = 978.184 ; free physical = 20959 ; free virtual = 32684
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.2.bc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-603] Evaluating the output(s) of a call to function 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/powdouble.cpp:6:12) in function 'distanceTransform<512, 512>' and propagating its result(s) since all actual argument(s) to the function are constants.
+INFO: [XFORM 203-603] Evaluating the output(s) of a call to function 'pow_reduce::pow_generic<double>' (/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/powdouble.cpp:6:12) in function 'thresholdOtsu<512, 512>' and propagating its result(s) since all actual argument(s) to the function are constants.
+WARNING: [XFORM 203-631] Renaming function 'watershed_algorithm<512, 512>' to 'watershed_algorithm' (segmentation.cpp:480:17)
+WARNING: [XFORM 203-631] Renaming function 'thresholdOtsu<512, 512>' to 'thresholdOtsu' (segmentation.cpp:52:32)
+WARNING: [XFORM 203-631] Renaming function 'morphologyEx<512, 512, 0, 3, 2>' to 'morphologyEx' (segmentation.cpp:152:54)
+WARNING: [XFORM 203-631] Renaming function 'image_segmentation<512, 512>' to 'image_segmentation' (segmentation.cpp:67:31)
+WARNING: [XFORM 203-631] Renaming function 'distanceTransform<512, 512>' to 'distanceTransform' (segmentation.cpp:266:13)
+WARNING: [XFORM 203-631] Renaming function 'dilate<512, 512, 3, 3, 2>' to 'dilate' (segmentation.cpp:207:50)
+WARNING: [XFORM 203-631] Renaming function 'connectedComponents<512, 512>' to 'connectedComponents' (segmentation.cpp:374:29)
+Command         transform done; 19.91 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:02:18 ; elapsed = 00:02:26 . Memory (MB): peak = 1511.938 ; gain = 978.184 ; free physical = 20953 ; free virtual = 32682
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 131.75 sec.
+Command     elaborate done; 144.54 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'imageProcessing' ...
+Execute       ap_set_top_model imageProcessing 
+WARNING: [SYN 201-103] Legalizing function name 'RGBtoGray<512, 512>2' to 'RGBtoGray_512_512_2'.
+Execute       get_model_list imageProcessing -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model imageProcessing 
+Execute       preproc_iomode -model image_segmentation 
+Execute       preproc_iomode -model watershed_algorithm 
+Execute       preproc_iomode -model connectedComponents 
+Execute       preproc_iomode -model distanceTransform 
+Execute       preproc_iomode -model dilate 
+Execute       preproc_iomode -model morphologyEx 
+Execute       preproc_iomode -model thresholdOtsu 
+Execute       preproc_iomode -model RGBtoGray<512, 512>2 
+Execute       get_model_list imageProcessing -filter all-wo-channel 
+INFO-FLOW: Model list for configure: {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing
+INFO-FLOW: Configuring Module : RGBtoGray<512, 512>2 ...
+Execute       set_default_model RGBtoGray<512, 512>2 
+Execute       apply_spec_resource_limit RGBtoGray<512, 512>2 
+INFO-FLOW: Configuring Module : thresholdOtsu ...
+Execute       set_default_model thresholdOtsu 
+Execute       apply_spec_resource_limit thresholdOtsu 
+INFO-FLOW: Configuring Module : morphologyEx ...
+Execute       set_default_model morphologyEx 
+Execute       apply_spec_resource_limit morphologyEx 
+INFO-FLOW: Configuring Module : dilate ...
+Execute       set_default_model dilate 
+Execute       apply_spec_resource_limit dilate 
+INFO-FLOW: Configuring Module : distanceTransform ...
+Execute       set_default_model distanceTransform 
+Execute       apply_spec_resource_limit distanceTransform 
+INFO-FLOW: Configuring Module : connectedComponents ...
+Execute       set_default_model connectedComponents 
+Execute       apply_spec_resource_limit connectedComponents 
+INFO-FLOW: Configuring Module : watershed_algorithm ...
+Execute       set_default_model watershed_algorithm 
+Execute       apply_spec_resource_limit watershed_algorithm 
+INFO-FLOW: Configuring Module : image_segmentation ...
+Execute       set_default_model image_segmentation 
+Execute       apply_spec_resource_limit image_segmentation 
+INFO-FLOW: Configuring Module : imageProcessing ...
+Execute       set_default_model imageProcessing 
+Execute       apply_spec_resource_limit imageProcessing 
+INFO-FLOW: Model list for preprocess: {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing
+INFO-FLOW: Preprocessing Module: RGBtoGray<512, 512>2 ...
+Execute       set_default_model RGBtoGray<512, 512>2 
+Execute       cdfg_preprocess -model RGBtoGray<512, 512>2 
+Execute       rtl_gen_preprocess RGBtoGray<512, 512>2 
+INFO-FLOW: Preprocessing Module: thresholdOtsu ...
+Execute       set_default_model thresholdOtsu 
+Execute       cdfg_preprocess -model thresholdOtsu 
+Execute       rtl_gen_preprocess thresholdOtsu 
+INFO-FLOW: Preprocessing Module: morphologyEx ...
+Execute       set_default_model morphologyEx 
+Execute       cdfg_preprocess -model morphologyEx 
+Execute       rtl_gen_preprocess morphologyEx 
+INFO-FLOW: Preprocessing Module: dilate ...
+Execute       set_default_model dilate 
+Execute       cdfg_preprocess -model dilate 
+Execute       rtl_gen_preprocess dilate 
+INFO-FLOW: Preprocessing Module: distanceTransform ...
+Execute       set_default_model distanceTransform 
+Execute       cdfg_preprocess -model distanceTransform 
+Execute       rtl_gen_preprocess distanceTransform 
+INFO-FLOW: Preprocessing Module: connectedComponents ...
+Execute       set_default_model connectedComponents 
+Execute       cdfg_preprocess -model connectedComponents 
+Execute       rtl_gen_preprocess connectedComponents 
+INFO-FLOW: Preprocessing Module: watershed_algorithm ...
+Execute       set_default_model watershed_algorithm 
+Execute       cdfg_preprocess -model watershed_algorithm 
+Execute       rtl_gen_preprocess watershed_algorithm 
+INFO-FLOW: Preprocessing Module: image_segmentation ...
+Execute       set_default_model image_segmentation 
+Execute       cdfg_preprocess -model image_segmentation 
+Execute       rtl_gen_preprocess image_segmentation 
+INFO-FLOW: Preprocessing Module: imageProcessing ...
+Execute       set_default_model imageProcessing 
+Execute       cdfg_preprocess -model imageProcessing 
+Execute       rtl_gen_preprocess imageProcessing 
+INFO-FLOW: Model list for synthesis: {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'RGBtoGray_512_512_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model RGBtoGray<512, 512>2 
+Execute       schedule -model RGBtoGray<512, 512>2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.19 sec.
+INFO: [HLS 200-111]  Elapsed time: 146.35 seconds; current allocated memory: 772.515 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 0 loops out of a total 2 loops have been pipelined in this design.
+Command       report done; 0.18 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.sched.adb -f 
+INFO-FLOW: Finish scheduling RGBtoGray<512, 512>2.
+Execute       set_default_model RGBtoGray<512, 512>2 
+Execute       bind -model RGBtoGray<512, 512>2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=RGBtoGray<512, 512>2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 773.039 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.verbose.bind.rpt -verbose -f 
+Command       report done; 0.23 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.bind.adb -f 
+INFO-FLOW: Finish binding RGBtoGray<512, 512>2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'thresholdOtsu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model thresholdOtsu 
+Execute       schedule -model thresholdOtsu 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.21 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.54 seconds; current allocated memory: 773.721 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.verbose.sched.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.sched.adb -f 
+INFO-FLOW: Finish scheduling thresholdOtsu.
+Execute       set_default_model thresholdOtsu 
+Execute       bind -model thresholdOtsu 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=thresholdOtsu
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 774.240 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.verbose.bind.rpt -verbose -f 
+Command       report done; 0.33 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.bind.adb -f 
+INFO-FLOW: Finish binding thresholdOtsu.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'morphologyEx' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model morphologyEx 
+Execute       schedule -model morphologyEx 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 774.762 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.verbose.sched.rpt -verbose -f 
+Command       report done; 0.12 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.sched.adb -f 
+INFO-FLOW: Finish scheduling morphologyEx.
+Execute       set_default_model morphologyEx 
+Execute       bind -model morphologyEx 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=morphologyEx
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 775.394 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.verbose.bind.rpt -verbose -f 
+Command       report done; 0.39 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.bind.adb -f 
+INFO-FLOW: Finish binding morphologyEx.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dilate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model dilate 
+Execute       schedule -model dilate 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 775.805 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.sched.adb -f 
+INFO-FLOW: Finish scheduling dilate.
+Execute       set_default_model dilate 
+Execute       bind -model dilate 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=dilate
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.3 seconds; current allocated memory: 776.241 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.verbose.bind.rpt -verbose -f 
+Command       report done; 0.24 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.bind.adb -f 
+INFO-FLOW: Finish binding dilate.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'distanceTransform' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model distanceTransform 
+Execute       schedule -model distanceTransform 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.34 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.67 seconds; current allocated memory: 777.057 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.verbose.sched.rpt -verbose -f 
+Command       report done; 0.29 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.sched.adb -f 
+INFO-FLOW: Finish scheduling distanceTransform.
+Execute       set_default_model distanceTransform 
+Execute       bind -model distanceTransform 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=distanceTransform
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.23 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.64 seconds; current allocated memory: 777.996 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.verbose.bind.rpt -verbose -f 
+Command       report done; 0.71 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.bind.adb -f 
+INFO-FLOW: Finish binding distanceTransform.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'connectedComponents' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model connectedComponents 
+Execute       schedule -model connectedComponents 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.24 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.1 seconds; current allocated memory: 778.573 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.verbose.sched.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.sched.adb -f 
+INFO-FLOW: Finish scheduling connectedComponents.
+Execute       set_default_model connectedComponents 
+Execute       bind -model connectedComponents 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=connectedComponents
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.4 seconds; current allocated memory: 779.196 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.verbose.bind.rpt -verbose -f 
+Command       report done; 0.37 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.bind.adb -f 
+INFO-FLOW: Finish binding connectedComponents.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'watershed_algorithm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model watershed_algorithm 
+Execute       schedule -model watershed_algorithm 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.23 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 779.660 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.verbose.sched.rpt -verbose -f 
+Command       report done; 0.17 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.sched.adb -f 
+INFO-FLOW: Finish scheduling watershed_algorithm.
+Execute       set_default_model watershed_algorithm 
+Execute       bind -model watershed_algorithm 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=watershed_algorithm
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.17 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.42 seconds; current allocated memory: 780.293 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.verbose.bind.rpt -verbose -f 
+Command       report done; 0.4 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.bind.adb -f 
+INFO-FLOW: Finish binding watershed_algorithm.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'image_segmentation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model image_segmentation 
+Execute       schedule -model image_segmentation 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.21 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.72 seconds; current allocated memory: 780.849 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.verbose.sched.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.sched.adb -f 
+INFO-FLOW: Finish scheduling image_segmentation.
+Execute       set_default_model image_segmentation 
+Execute       bind -model image_segmentation 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=image_segmentation
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 3.68 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.9 seconds; current allocated memory: 781.992 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.verbose.bind.rpt -verbose -f 
+Command       report done; 2.06 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.bind.adb -f 
+INFO-FLOW: Finish binding image_segmentation.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'imageProcessing' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model imageProcessing 
+Execute       schedule -model imageProcessing 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.26 seconds; current allocated memory: 782.471 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.sched.adb -f 
+INFO-FLOW: Finish scheduling imageProcessing.
+Execute       set_default_model imageProcessing 
+Execute       bind -model imageProcessing 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=imageProcessing
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.84 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.95 seconds; current allocated memory: 782.723 MB.
+Execute       report -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.verbose.bind.rpt -verbose -f 
+Command       report done; 2.24 sec.
+Execute       db_write -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.bind.adb -f 
+INFO-FLOW: Finish binding imageProcessing.
+Execute       get_model_list imageProcessing -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess RGBtoGray<512, 512>2 
+Execute       rtl_gen_preprocess thresholdOtsu 
+Execute       rtl_gen_preprocess morphologyEx 
+Execute       rtl_gen_preprocess dilate 
+Execute       rtl_gen_preprocess distanceTransform 
+Execute       rtl_gen_preprocess connectedComponents 
+Execute       rtl_gen_preprocess watershed_algorithm 
+Execute       rtl_gen_preprocess image_segmentation 
+Execute       rtl_gen_preprocess imageProcessing 
+INFO-FLOW: Model list for RTL generation: {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'RGBtoGray_512_512_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model RGBtoGray<512, 512>2 -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_dadd_64ns_64ns_64_6_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_dmul_64ns_64ns_64_6_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_sitodp_32ns_64_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'RGBtoGray_512_512_2'.
+INFO: [HLS 200-111]  Elapsed time: 2.39 seconds; current allocated memory: 783.935 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl RGBtoGray<512, 512>2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/RGBtoGray_512_512_2 -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl RGBtoGray<512, 512>2 -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/RGBtoGray_512_512_2 
+Execute       gen_rtl RGBtoGray<512, 512>2 -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/RGBtoGray_512_512_2 
+Execute       gen_tb_info RGBtoGray<512, 512>2 -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2 -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Execute       report -model RGBtoGray<512, 512>2 -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/RGBtoGray_512_512_2_csynth.rpt -f 
+Execute       report -model RGBtoGray<512, 512>2 -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/RGBtoGray_512_512_2_csynth.xml -f -x 
+Execute       report -model RGBtoGray<512, 512>2 -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.verbose.rpt -verbose -f 
+Command       report done; 0.29 sec.
+Execute       db_write -model RGBtoGray<512, 512>2 -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.adb -f 
+Command       db_write done; 0.14 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'thresholdOtsu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model thresholdOtsu -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fcmp_32ns_32ns_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_sitofp_32ns_32_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'thresholdOtsu'.
+INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 786.575 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl thresholdOtsu -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/thresholdOtsu -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl thresholdOtsu -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/thresholdOtsu 
+Execute       gen_rtl thresholdOtsu -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/thresholdOtsu 
+Execute       gen_tb_info thresholdOtsu -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.11 sec.
+Execute       report -model thresholdOtsu -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/thresholdOtsu_csynth.rpt -f 
+Execute       report -model thresholdOtsu -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/thresholdOtsu_csynth.xml -f -x 
+Execute       report -model thresholdOtsu -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.verbose.rpt -verbose -f 
+Command       report done; 0.44 sec.
+Execute       db_write -model thresholdOtsu -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.adb -f 
+Command       db_write done; 0.19 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'morphologyEx' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model morphologyEx -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'morphologyEx'.
+INFO: [HLS 200-111]  Elapsed time: 1.09 seconds; current allocated memory: 789.731 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl morphologyEx -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/morphologyEx -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl morphologyEx -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/morphologyEx 
+Execute       gen_rtl morphologyEx -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/morphologyEx 
+Execute       gen_tb_info morphologyEx -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.11 sec.
+Execute       report -model morphologyEx -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/morphologyEx_csynth.rpt -f 
+Execute       report -model morphologyEx -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/morphologyEx_csynth.xml -f -x 
+Execute       report -model morphologyEx -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.verbose.rpt -verbose -f 
+Command       report done; 0.47 sec.
+Execute       db_write -model morphologyEx -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.adb -f 
+Command       db_write done; 0.2 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dilate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model dilate -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dilate'.
+INFO: [HLS 200-111]  Elapsed time: 1.18 seconds; current allocated memory: 793.271 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dilate -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/dilate -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl dilate -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/dilate 
+Execute       gen_rtl dilate -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/dilate 
+Execute       gen_tb_info dilate -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Execute       report -model dilate -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/dilate_csynth.rpt -f 
+Execute       report -model dilate -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/dilate_csynth.xml -f -x 
+Execute       report -model dilate -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.verbose.rpt -verbose -f 
+Command       report done; 0.31 sec.
+Execute       db_write -model dilate -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.adb -f 
+Command       db_write done; 0.21 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'distanceTransform' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model distanceTransform -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_dadd_64ns_64ns_64_6_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_dcmp_64ns_64ns_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fcmp_32ns_32ns_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fpext_32ns_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fptrunc_64ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'distanceTransform'.
+INFO: [HLS 200-111]  Elapsed time: 0.94 seconds; current allocated memory: 796.928 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl distanceTransform -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/distanceTransform -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl distanceTransform -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/distanceTransform 
+Execute       gen_rtl distanceTransform -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/distanceTransform 
+Execute       gen_tb_info distanceTransform -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.15 sec.
+Execute       report -model distanceTransform -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/distanceTransform_csynth.rpt -f 
+Command       report done; 0.14 sec.
+Execute       report -model distanceTransform -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/distanceTransform_csynth.xml -f -x 
+Command       report done; 0.15 sec.
+Execute       report -model distanceTransform -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.verbose.rpt -verbose -f 
+Command       report done; 0.81 sec.
+Execute       db_write -model distanceTransform -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.adb -f 
+Command       db_write done; 0.37 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'connectedComponents' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model connectedComponents -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'connectedComponents'.
+Command       create_rtl_model done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.88 seconds; current allocated memory: 801.884 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl connectedComponents -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/connectedComponents -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl connectedComponents -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/connectedComponents 
+Execute       gen_rtl connectedComponents -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/connectedComponents 
+Execute       gen_tb_info connectedComponents -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.13 sec.
+Execute       report -model connectedComponents -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/connectedComponents_csynth.rpt -f 
+Execute       report -model connectedComponents -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/connectedComponents_csynth.xml -f -x 
+Execute       report -model connectedComponents -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.verbose.rpt -verbose -f 
+Command       report done; 0.44 sec.
+Execute       db_write -model connectedComponents -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.adb -f 
+Command       db_write done; 0.28 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'watershed_algorithm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model watershed_algorithm -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'watershed_algorithm'.
+Command       create_rtl_model done; 0.22 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.36 seconds; current allocated memory: 805.619 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl watershed_algorithm -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/watershed_algorithm -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl watershed_algorithm -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/watershed_algorithm 
+Execute       gen_rtl watershed_algorithm -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/watershed_algorithm 
+Execute       gen_tb_info watershed_algorithm -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Execute       report -model watershed_algorithm -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/watershed_algorithm_csynth.rpt -f 
+Execute       report -model watershed_algorithm -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/watershed_algorithm_csynth.xml -f -x 
+Execute       report -model watershed_algorithm -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.verbose.rpt -verbose -f 
+Command       report done; 0.47 sec.
+Execute       db_write -model watershed_algorithm -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.adb -f 
+Command       db_write done; 0.32 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'image_segmentation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model image_segmentation -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fcmp_32ns_32ns_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'imageProcessing_sitofp_32ns_32_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'image_segmentation'.
+Command       create_rtl_model done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.41 seconds; current allocated memory: 809.815 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl image_segmentation -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/image_segmentation -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl image_segmentation -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/image_segmentation 
+Execute       gen_rtl image_segmentation -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/image_segmentation 
+Execute       gen_tb_info image_segmentation -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.11 sec.
+Execute       report -model image_segmentation -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/image_segmentation_csynth.rpt -f 
+Execute       report -model image_segmentation -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/image_segmentation_csynth.xml -f -x 
+Command       report done; 0.11 sec.
+Execute       report -model image_segmentation -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.verbose.rpt -verbose -f 
+Command       report done; 2.07 sec.
+Execute       db_write -model image_segmentation -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.adb -f 
+Command       db_write done; 0.33 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'imageProcessing' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model imageProcessing -vendor xilinx -mg_file /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on function 'imageProcessing' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'imageProcessing'.
+Command       create_rtl_model done; 0.21 sec.
+INFO: [HLS 200-111]  Elapsed time: 3.06 seconds; current allocated memory: 813.430 MB.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       gen_rtl imageProcessing -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/systemc/imageProcessing -synmodules {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing 
+Execute       gen_rtl imageProcessing -istop -style xilinx -f -lang vhdl -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/vhdl/imageProcessing 
+Execute       gen_rtl imageProcessing -istop -style xilinx -f -lang vlog -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/verilog/imageProcessing 
+Execute       export_constraint_db -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl -f -tool general 
+Execute       report -model imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.design.xml -verbose -f -dv 
+Command       report done; 1.56 sec.
+Execute       report -model imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.sdaccel.xml -verbose -f -sdaccel 
+Command       report done; 0.11 sec.
+Execute       gen_tb_info imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing -p /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db 
+Execute       report -model imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/imageProcessing_csynth.rpt -f 
+Execute       report -model imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/syn/report/imageProcessing_csynth.xml -f -x 
+Execute       report -model imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.verbose.rpt -verbose -f 
+Command       report done; 1.98 sec.
+Execute       db_write -model imageProcessing -o /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.adb -f 
+Command       db_write done; 0.24 sec.
+Execute       sc_get_clocks imageProcessing 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain imageProcessing 
+INFO-FLOW: Model list for RTL component generation: {RGBtoGray<512, 512>2} thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing
+INFO-FLOW: Handling components in module [RGBtoGray_512_512_2] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+INFO-FLOW: Found component imageProcessing_dadd_64ns_64ns_64_6_full_dsp_1.
+INFO-FLOW: Append model imageProcessing_dadd_64ns_64ns_64_6_full_dsp_1
+INFO-FLOW: Found component imageProcessing_dmul_64ns_64ns_64_6_max_dsp_1.
+INFO-FLOW: Append model imageProcessing_dmul_64ns_64ns_64_6_max_dsp_1
+INFO-FLOW: Found component imageProcessing_sitodp_32ns_64_5_1.
+INFO-FLOW: Append model imageProcessing_sitodp_32ns_64_5_1
+INFO-FLOW: Found component RGBtoGray_512_512_2_mask_table1.
+INFO-FLOW: Append model RGBtoGray_512_512_2_mask_table1
+INFO-FLOW: Found component RGBtoGray_512_512_2_one_half_table2.
+INFO-FLOW: Append model RGBtoGray_512_512_2_one_half_table2
+INFO-FLOW: Handling components in module [thresholdOtsu] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+INFO-FLOW: Found component imageProcessing_fadd_32ns_32ns_32_5_full_dsp_1.
+INFO-FLOW: Append model imageProcessing_fadd_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: Found component imageProcessing_fmul_32ns_32ns_32_4_max_dsp_1.
+INFO-FLOW: Append model imageProcessing_fmul_32ns_32ns_32_4_max_dsp_1
+INFO-FLOW: Found component imageProcessing_sitofp_32ns_32_5_1.
+INFO-FLOW: Append model imageProcessing_sitofp_32ns_32_5_1
+INFO-FLOW: Found component imageProcessing_fcmp_32ns_32ns_1_1_1.
+INFO-FLOW: Append model imageProcessing_fcmp_32ns_32ns_1_1_1
+INFO-FLOW: Found component thresholdOtsu_variance.
+INFO-FLOW: Append model thresholdOtsu_variance
+INFO-FLOW: Found component thresholdOtsu_histogram.
+INFO-FLOW: Append model thresholdOtsu_histogram
+INFO-FLOW: Handling components in module [morphologyEx] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+INFO-FLOW: Found component morphologyEx_temp.
+INFO-FLOW: Append model morphologyEx_temp
+INFO-FLOW: Handling components in module [dilate] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+INFO-FLOW: Found component dilate_imKernel.
+INFO-FLOW: Append model dilate_imKernel
+INFO-FLOW: Found component dilate_sureBackground.
+INFO-FLOW: Append model dilate_sureBackground
+INFO-FLOW: Handling components in module [distanceTransform] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+INFO-FLOW: Found component imageProcessing_fptrunc_64ns_32_1_1.
+INFO-FLOW: Append model imageProcessing_fptrunc_64ns_32_1_1
+INFO-FLOW: Found component imageProcessing_fpext_32ns_64_1_1.
+INFO-FLOW: Append model imageProcessing_fpext_32ns_64_1_1
+INFO-FLOW: Found component imageProcessing_dcmp_64ns_64ns_1_1_1.
+INFO-FLOW: Append model imageProcessing_dcmp_64ns_64ns_1_1_1
+INFO-FLOW: Handling components in module [connectedComponents] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+INFO-FLOW: Found component connectedComponents_markersGen.
+INFO-FLOW: Append model connectedComponents_markersGen
+INFO-FLOW: Found component connectedComponents_equivLabels_parent.
+INFO-FLOW: Append model connectedComponents_equivLabels_parent
+INFO-FLOW: Found component connectedComponents_equivLabels_child.
+INFO-FLOW: Append model connectedComponents_equivLabels_child
+INFO-FLOW: Handling components in module [watershed_algorithm] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+INFO-FLOW: Found component watershed_algorithm_watershedOutput.
+INFO-FLOW: Append model watershed_algorithm_watershedOutput
+INFO-FLOW: Found component watershed_algorithm_neighbours_0.
+INFO-FLOW: Append model watershed_algorithm_neighbours_0
+INFO-FLOW: Found component watershed_algorithm_neighbours_1.
+INFO-FLOW: Append model watershed_algorithm_neighbours_1
+INFO-FLOW: Handling components in module [image_segmentation] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+INFO-FLOW: Found component image_segmentation_binaryThreshold.
+INFO-FLOW: Append model image_segmentation_binaryThreshold
+INFO-FLOW: Found component image_segmentation_distanceTransformOut.
+INFO-FLOW: Append model image_segmentation_distanceTransformOut
+INFO-FLOW: Handling components in module [imageProcessing] ... 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: Found component imageProcessing_inputImage_r.
+INFO-FLOW: Append model imageProcessing_inputImage_r
+INFO-FLOW: Found component imageProcessing_finalOutputImage_r.
+INFO-FLOW: Append model imageProcessing_finalOutputImage_r
+INFO-FLOW: Append model RGBtoGray_512_512_2
+INFO-FLOW: Append model thresholdOtsu
+INFO-FLOW: Append model morphologyEx
+INFO-FLOW: Append model dilate
+INFO-FLOW: Append model distanceTransform
+INFO-FLOW: Append model connectedComponents
+INFO-FLOW: Append model watershed_algorithm
+INFO-FLOW: Append model image_segmentation
+INFO-FLOW: Append model imageProcessing
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: imageProcessing_dadd_64ns_64ns_64_6_full_dsp_1 imageProcessing_dmul_64ns_64ns_64_6_max_dsp_1 imageProcessing_sitodp_32ns_64_5_1 RGBtoGray_512_512_2_mask_table1 RGBtoGray_512_512_2_one_half_table2 imageProcessing_fadd_32ns_32ns_32_5_full_dsp_1 imageProcessing_fmul_32ns_32ns_32_4_max_dsp_1 imageProcessing_sitofp_32ns_32_5_1 imageProcessing_fcmp_32ns_32ns_1_1_1 thresholdOtsu_variance thresholdOtsu_histogram morphologyEx_temp dilate_imKernel dilate_sureBackground imageProcessing_fptrunc_64ns_32_1_1 imageProcessing_fpext_32ns_64_1_1 imageProcessing_dcmp_64ns_64ns_1_1_1 connectedComponents_markersGen connectedComponents_equivLabels_parent connectedComponents_equivLabels_child watershed_algorithm_watershedOutput watershed_algorithm_neighbours_0 watershed_algorithm_neighbours_1 image_segmentation_binaryThreshold image_segmentation_distanceTransformOut imageProcessing_inputImage_r imageProcessing_finalOutputImage_r RGBtoGray_512_512_2 thresholdOtsu morphologyEx dilate distanceTransform connectedComponents watershed_algorithm image_segmentation imageProcessing
+INFO-FLOW: To file: write model imageProcessing_dadd_64ns_64ns_64_6_full_dsp_1
+INFO-FLOW: To file: write model imageProcessing_dmul_64ns_64ns_64_6_max_dsp_1
+INFO-FLOW: To file: write model imageProcessing_sitodp_32ns_64_5_1
+INFO-FLOW: To file: write model RGBtoGray_512_512_2_mask_table1
+INFO-FLOW: To file: write model RGBtoGray_512_512_2_one_half_table2
+INFO-FLOW: To file: write model imageProcessing_fadd_32ns_32ns_32_5_full_dsp_1
+INFO-FLOW: To file: write model imageProcessing_fmul_32ns_32ns_32_4_max_dsp_1
+INFO-FLOW: To file: write model imageProcessing_sitofp_32ns_32_5_1
+INFO-FLOW: To file: write model imageProcessing_fcmp_32ns_32ns_1_1_1
+INFO-FLOW: To file: write model thresholdOtsu_variance
+INFO-FLOW: To file: write model thresholdOtsu_histogram
+INFO-FLOW: To file: write model morphologyEx_temp
+INFO-FLOW: To file: write model dilate_imKernel
+INFO-FLOW: To file: write model dilate_sureBackground
+INFO-FLOW: To file: write model imageProcessing_fptrunc_64ns_32_1_1
+INFO-FLOW: To file: write model imageProcessing_fpext_32ns_64_1_1
+INFO-FLOW: To file: write model imageProcessing_dcmp_64ns_64ns_1_1_1
+INFO-FLOW: To file: write model connectedComponents_markersGen
+INFO-FLOW: To file: write model connectedComponents_equivLabels_parent
+INFO-FLOW: To file: write model connectedComponents_equivLabels_child
+INFO-FLOW: To file: write model watershed_algorithm_watershedOutput
+INFO-FLOW: To file: write model watershed_algorithm_neighbours_0
+INFO-FLOW: To file: write model watershed_algorithm_neighbours_1
+INFO-FLOW: To file: write model image_segmentation_binaryThreshold
+INFO-FLOW: To file: write model image_segmentation_distanceTransformOut
+INFO-FLOW: To file: write model imageProcessing_inputImage_r
+INFO-FLOW: To file: write model imageProcessing_finalOutputImage_r
+INFO-FLOW: To file: write model RGBtoGray_512_512_2
+INFO-FLOW: To file: write model thresholdOtsu
+INFO-FLOW: To file: write model morphologyEx
+INFO-FLOW: To file: write model dilate
+INFO-FLOW: To file: write model distanceTransform
+INFO-FLOW: To file: write model connectedComponents
+INFO-FLOW: To file: write model watershed_algorithm
+INFO-FLOW: To file: write model image_segmentation
+INFO-FLOW: To file: write model imageProcessing
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/rijain/Workspace/Watershed/cpp/new/sample/solution1
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.14 sec.
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.14 sec.
+Command       ap_source done; 0.14 sec.
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'RGBtoGray_512_512_2_mask_table1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'RGBtoGray_512_512_2_one_half_table2_rom' using auto ROMs.
+Command       ap_source done; 0.39 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'thresholdOtsu_variance_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'thresholdOtsu_histogram_ram (RAM)' using block RAMs.
+Command       ap_source done; 0.5 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'morphologyEx_temp_ram (RAM)' using block RAMs.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'dilate_imKernel_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dilate_sureBackground_ram (RAM)' using block RAMs with power-on initialization.
+Command       ap_source done; 0.17 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Command       ap_source done; 0.31 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'connectedComponents_markersGen_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'connectedComponents_equivLabels_parent_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'connectedComponents_equivLabels_child_ram (RAM)' using block RAMs.
+Command       ap_source done; 0.27 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'watershed_algorithm_watershedOutput_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'watershed_algorithm_neighbours_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'watershed_algorithm_neighbours_1_rom' using distributed ROMs.
+Command       ap_source done; 0.26 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'image_segmentation_binaryThreshold_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'image_segmentation_distanceTransformOut_ram (RAM)' using block RAMs with power-on initialization.
+Command       ap_source done; 0.28 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'imageProcessing_inputImage_r_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'imageProcessing_finalOutputImage_r_ram (RAM)' using block RAMs.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/rijain/Workspace/Watershed/cpp/new/sample/solution1
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.13 sec.
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.18 sec.
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.19 sec.
+Command       ap_source done; 0.19 sec.
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=imageProcessing xml_exists=0
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Command       ap_source done; 0.11 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Command       ap_source done; 0.23 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Command       ap_source done; 0.2 sec.
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=2
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=imageProcessing
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=36 #gSsdmPorts=2
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_export -xo 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute       sc_get_clocks imageProcessing 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_dadd_4_full_dsp_64_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_dcmp_0_no_dsp_64_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_dmul_4_max_dsp_64_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_fadd_3_full_dsp_32_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_fcmp_0_no_dsp_32_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_fmul_2_max_dsp_32_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_fpext_0_no_dsp_32_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_fptrunc_0_no_dsp_64_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_sitodp_3_no_dsp_32_ip.tcl 
+Execute       source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/misc/imageProcessing_ap_sitofp_3_no_dsp_32_ip.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:37 ; elapsed = 00:03:12 . Memory (MB): peak = 1511.938 ; gain = 978.184 ; free physical = 20919 ; free virtual = 32681
+INFO: [SYSC 207-301] Generating SystemC RTL for imageProcessing.
+INFO: [VHDL 208-304] Generating VHDL RTL for imageProcessing.
+INFO: [VLOG 209-307] Generating Verilog RTL for imageProcessing.
+Command     autosyn done; 46.07 sec.
+Execute     get_part 
+Execute     get_config_export -sdx_tcl 
+Command   csynth_design done; 190.65 sec.
+Command ap_source done; 191.28 sec.
+Execute cleanup_all 
+Command cleanup_all done; 0.13 sec.
+INFO-FLOW: Workspace /home/rijain/Workspace/Watershed/cpp/new/sample/solution1 opened at Sun Apr 23 06:46:45 PDT 2023
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.15 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.15 sec.
+Command     ap_source done; 0.15 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_hp.hlp 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xa7a12tcsg325-1q 
+Execute       add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute         get_default_platform 
+Execute         license_isbetapart xa7a12t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/aartix7/aartix7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.36 sec.
+Execute   export_design -flow impl -rtl verilog -format ip_catalog 
+Execute     get_config_export -acc 
+Execute     get_config_export -clock_margin 
+Execute     get_config_export -custom_script 
+Execute     get_config_export -description 
+Execute     get_config_export -display_name 
+Execute     get_config_export -driver_input_dir 
+Execute     get_config_export -ipname 
+Execute     get_config_export -kernel_drc 
+Execute     get_config_export -library 
+Execute     get_config_export -qor_test 
+Execute     get_config_export -sdaccel 
+Execute     get_config_export -sim 
+Execute     get_config_export -taxonomy 
+Execute     get_config_export -use_ip 
+Execute     get_config_export -use_netlist 
+Execute     get_config_export -vendor 
+Execute     get_config_export -version 
+Execute     get_config_export -xo 
+Execute     config_export -format=ip_catalog -rtl=verilog 
+INFO-FLOW: DBG:CMD: export_design_wrap: -format ip_catalog -flow impl -rtl verilog
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_export -vivado_clock 
+Execute     get_top 
+Execute     get_config_sdx -target 
+Execute     get_config_rtl -auto_prefix 
+Execute     get_config_sdx -target 
+INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -tool vivado -rtl verilog -sdx-target none
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.13 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.14 sec.
+Command     ap_source done; 0.14 sec.
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.13 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.14 sec.
+Command     ap_source done; 0.14 sec.
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=imageProcessing xml_exists=1
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Command     ap_source done; 0.14 sec.
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=2
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=2
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=imageProcessing
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_top_info
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=imageProcessing
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+INFO-FLOW: DBG:CMD:       generate_ipi_example_script
+INFO-FLOW: DBG:CMD:       generate_syn_sh
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       generate_imp_constraints
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       copy-tb-rtl-files
+INFO-FLOW: DBG:CMD:       copy-tb-data-files
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.13 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.13 sec.
+Command     ap_source done; 0.13 sec.
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:     exec /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/ip/pack.sh
+ERROR: [IMPL 213-28] Failed to generate IP.
+Command   export_design done; error code: 2; 54.71 sec.
+Command ap_source done; error code: 1; 55.09 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/rijain/Workspace/Watershed/cpp/new/sample/solution1 opened at Sun Apr 23 06:54:20 PDT 2023
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.16 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_hp.hlp 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xa7a12tcsg325-1q 
+Execute       add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute         get_default_platform 
+Execute         license_isbetapart xa7a12t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/aartix7/aartix7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.39 sec.
+Execute   export_design -flow impl -rtl verilog -format syn_dcp 
+Execute     get_config_export -acc 
+Execute     get_config_export -clock_margin 
+Execute     get_config_export -custom_script 
+Execute     get_config_export -description 
+Execute     get_config_export -display_name 
+Execute     get_config_export -driver_input_dir 
+Execute     get_config_export -ipname 
+Execute     get_config_export -kernel_drc 
+Execute     get_config_export -library 
+Execute     get_config_export -qor_test 
+Execute     get_config_export -sdaccel 
+Execute     get_config_export -sim 
+Execute     get_config_export -taxonomy 
+Execute     get_config_export -use_ip 
+Execute     get_config_export -use_netlist 
+Execute     get_config_export -vendor 
+Execute     get_config_export -version 
+Execute     get_config_export -xo 
+Execute     config_export -format=syn_dcp -rtl=verilog 
+INFO-FLOW: DBG:CMD: export_design_wrap: -format syn_dcp -flow impl -rtl verilog
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_export -vivado_clock 
+Execute     get_top 
+Execute     get_config_sdx -target 
+Execute     get_config_rtl -auto_prefix 
+Execute     get_config_sdx -target 
+INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -tool vivado -rtl verilog -sdx-target none
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.13 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.13 sec.
+Command     ap_source done; 0.13 sec.
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.12 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.13 sec.
+Command     ap_source done; 0.14 sec.
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=imageProcessing xml_exists=1
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Command     ap_source done; 0.13 sec.
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/RGBtoGray_512_512_2.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/thresholdOtsu.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/morphologyEx.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/dilate.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/distanceTransform.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/connectedComponents.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/watershed_algorithm.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/image_segmentation.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.compgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=2
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=2
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=imageProcessing
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_top_info
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=imageProcessing
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.rtl_wrap.cfg.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+INFO-FLOW: DBG:CMD:       generate_ipi_example_script
+INFO-FLOW: DBG:CMD:       generate_syn_sh
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       generate_imp_constraints
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.constraint.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/imageProcessing.tbgen.tcl 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       copy-tb-rtl-files
+INFO-FLOW: DBG:CMD:       copy-tb-data-files
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO-FLOW: DBG:CMD: read_platform_lib /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute           source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.17 sec.
+Execute         source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.17 sec.
+Command     ap_source done; 0.17 sec.
+Execute     source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /u/red22/Xilinx/Vivado_2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:     exec /home/rijain/Workspace/Watershed/cpp/new/sample/solution1/impl/ip/pack.sh
+ERROR: [IMPL 213-28] Failed to generate IP.
+Command   export_design done; error code: 2; 50.71 sec.
+Command ap_source done; error code: 1; 51.12 sec.
+Execute cleanup_all 

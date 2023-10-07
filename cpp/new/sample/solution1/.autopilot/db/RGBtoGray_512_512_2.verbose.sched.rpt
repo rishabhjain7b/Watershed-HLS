@@ -1,0 +1,506 @@
+
+
+================================================================
+== Vivado HLS Report for 'RGBtoGray_512_512_2'
+================================================================
+* Date:           Sun Apr 23 06:44:31 2023
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        sample
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.374|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+---------+---------+---------+---------+
+    |      Latency      |      Interval     | Pipeline|
+    |   min   |   max   |   min   |   max   |   Type  |
+    +---------+---------+---------+---------+---------+
+    |  7865345|  7865345|  7865345|  7865345|   none  |
+    +---------+---------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |      Latency      | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  7865344|  7865344|     15362|          -|          -|   512|    no    |
+        | + Loop 1.1  |    15360|    15360|        30|          -|          -|   512|    no    |
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 32
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	4  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	3  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.66>
+ST_1 : Operation 33 [1/1] (1.66ns)   --->   "br label %.loopexit" [segmentation.cpp:29]   --->   Operation 33 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 2.12>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%i = phi i10 [ 0, %0 ], [ %i_18, %.loopexit.loopexit ]"   --->   Operation 34 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (1.70ns)   --->   "%exitcond1 = icmp eq i10 %i, -512" [segmentation.cpp:29]   --->   Operation 35 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 36 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (2.12ns)   --->   "%i_18 = add i10 %i, 1" [segmentation.cpp:29]   --->   Operation 37 'add' 'i_18' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.12> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %1, label %.preheader.preheader" [segmentation.cpp:29]   --->   Operation 38 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i, i9 0)" [segmentation.cpp:29]   --->   Operation 39 'bitconcatenate' 'tmp' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_191_cast = zext i19 %tmp to i20" [segmentation.cpp:30]   --->   Operation 40 'zext' 'tmp_191_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (1.66ns)   --->   "br label %.preheader" [segmentation.cpp:30]   --->   Operation 41 'br' <Predicate = (!exitcond1)> <Delay = 1.66>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "ret void" [segmentation.cpp:43]   --->   Operation 42 'ret' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.50>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%j = phi i10 [ %j_17, %_ifconv ], [ 0, %.preheader.preheader ]"   --->   Operation 43 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (1.70ns)   --->   "%exitcond = icmp eq i10 %j, -512" [segmentation.cpp:30]   --->   Operation 44 'icmp' 'exitcond' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%empty_128 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 45 'speclooptripcount' 'empty_128' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (2.12ns)   --->   "%j_17 = add i10 %j, 1" [segmentation.cpp:30]   --->   Operation 46 'add' 'j_17' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.12> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.loopexit.loopexit, label %_ifconv" [segmentation.cpp:30]   --->   Operation 47 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_cast = zext i10 %j to i20" [segmentation.cpp:32]   --->   Operation 48 'zext' 'tmp_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (2.25ns)   --->   "%tmp_s = add i20 %tmp_cast, %tmp_191_cast" [segmentation.cpp:32]   --->   Operation 49 'add' 'tmp_s' <Predicate = (!exitcond)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.12> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_192_cast = zext i20 %tmp_s to i64" [segmentation.cpp:32]   --->   Operation 50 'zext' 'tmp_192_cast' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%input_g_addr = getelementptr [262144 x i1]* %input_g, i64 0, i64 %tmp_192_cast" [segmentation.cpp:33]   --->   Operation 51 'getelementptr' 'input_g_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 52 [2/2] (3.25ns)   --->   "%input_g_load = load i1* %input_g_addr, align 1" [segmentation.cpp:33]   --->   Operation 52 'load' 'input_g_load' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 53 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 54 [1/2] (3.25ns)   --->   "%input_g_load = load i1* %input_g_addr, align 1" [segmentation.cpp:33]   --->   Operation 54 'load' 'input_g_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+
+State 5 <SV = 4> <Delay = 8.01>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_171 = zext i1 %input_g_load to i32" [segmentation.cpp:37]   --->   Operation 55 'zext' 'tmp_171' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 56 [5/5] (8.01ns)   --->   "%tmp_172 = sitofp i32 %tmp_171 to double" [segmentation.cpp:37]   --->   Operation 56 'sitodp' 'tmp_172' <Predicate = true> <Delay = 8.01> <Core = "Int2Double">   --->   Core 121 'Int2Double' <Latency = 4> <II = 1> <Delay = 8.01> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 8.01>
+ST_6 : Operation 57 [4/5] (8.01ns)   --->   "%tmp_172 = sitofp i32 %tmp_171 to double" [segmentation.cpp:37]   --->   Operation 57 'sitodp' 'tmp_172' <Predicate = true> <Delay = 8.01> <Core = "Int2Double">   --->   Core 121 'Int2Double' <Latency = 4> <II = 1> <Delay = 8.01> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.01>
+ST_7 : Operation 58 [3/5] (8.01ns)   --->   "%tmp_172 = sitofp i32 %tmp_171 to double" [segmentation.cpp:37]   --->   Operation 58 'sitodp' 'tmp_172' <Predicate = true> <Delay = 8.01> <Core = "Int2Double">   --->   Core 121 'Int2Double' <Latency = 4> <II = 1> <Delay = 8.01> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 8.01>
+ST_8 : Operation 59 [2/5] (8.01ns)   --->   "%tmp_172 = sitofp i32 %tmp_171 to double" [segmentation.cpp:37]   --->   Operation 59 'sitodp' 'tmp_172' <Predicate = true> <Delay = 8.01> <Core = "Int2Double">   --->   Core 121 'Int2Double' <Latency = 4> <II = 1> <Delay = 8.01> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 8.01>
+ST_9 : Operation 60 [1/5] (8.01ns)   --->   "%tmp_172 = sitofp i32 %tmp_171 to double" [segmentation.cpp:37]   --->   Operation 60 'sitodp' 'tmp_172' <Predicate = true> <Delay = 8.01> <Core = "Int2Double">   --->   Core 121 'Int2Double' <Latency = 4> <II = 1> <Delay = 8.01> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 7.79>
+ST_10 : Operation 61 [6/6] (7.79ns)   --->   "%tmp_173 = fmul double %tmp_172, 5.870000e-01" [segmentation.cpp:37]   --->   Operation 61 'dmul' 'tmp_173' <Predicate = true> <Delay = 7.79> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 5> <II = 1> <Delay = 7.79> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 7.79>
+ST_11 : Operation 62 [5/6] (7.79ns)   --->   "%tmp_173 = fmul double %tmp_172, 5.870000e-01" [segmentation.cpp:37]   --->   Operation 62 'dmul' 'tmp_173' <Predicate = true> <Delay = 7.79> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 5> <II = 1> <Delay = 7.79> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 7.79>
+ST_12 : Operation 63 [4/6] (7.79ns)   --->   "%tmp_173 = fmul double %tmp_172, 5.870000e-01" [segmentation.cpp:37]   --->   Operation 63 'dmul' 'tmp_173' <Predicate = true> <Delay = 7.79> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 5> <II = 1> <Delay = 7.79> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 7.79>
+ST_13 : Operation 64 [3/6] (7.79ns)   --->   "%tmp_173 = fmul double %tmp_172, 5.870000e-01" [segmentation.cpp:37]   --->   Operation 64 'dmul' 'tmp_173' <Predicate = true> <Delay = 7.79> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 5> <II = 1> <Delay = 7.79> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 7.79>
+ST_14 : Operation 65 [1/1] (0.00ns)   --->   "%input_r_addr = getelementptr [262144 x i1]* %input_r, i64 0, i64 %tmp_192_cast" [segmentation.cpp:32]   --->   Operation 65 'getelementptr' 'input_r_addr' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 66 [2/2] (3.25ns)   --->   "%input_r_load = load i1* %input_r_addr, align 1" [segmentation.cpp:32]   --->   Operation 66 'load' 'input_r_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_14 : Operation 67 [2/6] (7.79ns)   --->   "%tmp_173 = fmul double %tmp_172, 5.870000e-01" [segmentation.cpp:37]   --->   Operation 67 'dmul' 'tmp_173' <Predicate = true> <Delay = 7.79> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 5> <II = 1> <Delay = 7.79> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 7.79>
+ST_15 : Operation 68 [1/2] (3.25ns)   --->   "%input_r_load = load i1* %input_r_addr, align 1" [segmentation.cpp:32]   --->   Operation 68 'load' 'input_r_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_15 : Operation 69 [1/1] (1.37ns)   --->   "%tmp_170 = select i1 %input_r_load, double 0x40530FAE147AE147, double 0.000000e+00" [segmentation.cpp:37]   --->   Operation 69 'select' 'tmp_170' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 70 [1/6] (7.79ns)   --->   "%tmp_173 = fmul double %tmp_172, 5.870000e-01" [segmentation.cpp:37]   --->   Operation 70 'dmul' 'tmp_173' <Predicate = true> <Delay = 7.79> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 5> <II = 1> <Delay = 7.79> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 8.37>
+ST_16 : Operation 71 [6/6] (8.37ns)   --->   "%tmp_174 = fadd double %tmp_170, %tmp_173" [segmentation.cpp:37]   --->   Operation 71 'dadd' 'tmp_174' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 8.37>
+ST_17 : Operation 72 [5/6] (8.37ns)   --->   "%tmp_174 = fadd double %tmp_170, %tmp_173" [segmentation.cpp:37]   --->   Operation 72 'dadd' 'tmp_174' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 8.37>
+ST_18 : Operation 73 [4/6] (8.37ns)   --->   "%tmp_174 = fadd double %tmp_170, %tmp_173" [segmentation.cpp:37]   --->   Operation 73 'dadd' 'tmp_174' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 8.37>
+ST_19 : Operation 74 [3/6] (8.37ns)   --->   "%tmp_174 = fadd double %tmp_170, %tmp_173" [segmentation.cpp:37]   --->   Operation 74 'dadd' 'tmp_174' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 8.37>
+ST_20 : Operation 75 [1/1] (0.00ns)   --->   "%input_b_addr = getelementptr [262144 x i1]* %input_b, i64 0, i64 %tmp_192_cast" [segmentation.cpp:34]   --->   Operation 75 'getelementptr' 'input_b_addr' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 76 [2/2] (3.25ns)   --->   "%input_b_load = load i1* %input_b_addr, align 1" [segmentation.cpp:34]   --->   Operation 76 'load' 'input_b_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_20 : Operation 77 [2/6] (8.37ns)   --->   "%tmp_174 = fadd double %tmp_170, %tmp_173" [segmentation.cpp:37]   --->   Operation 77 'dadd' 'tmp_174' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 8.37>
+ST_21 : Operation 78 [1/2] (3.25ns)   --->   "%input_b_load = load i1* %input_b_addr, align 1" [segmentation.cpp:34]   --->   Operation 78 'load' 'input_b_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_21 : Operation 79 [1/6] (8.37ns)   --->   "%tmp_174 = fadd double %tmp_170, %tmp_173" [segmentation.cpp:37]   --->   Operation 79 'dadd' 'tmp_174' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 80 [1/1] (1.37ns)   --->   "%tmp_177 = select i1 %input_b_load, double 2.907000e+01, double 0.000000e+00" [segmentation.cpp:37]   --->   Operation 80 'select' 'tmp_177' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 8.37>
+ST_22 : Operation 81 [6/6] (8.37ns)   --->   "%x_assign = fadd double %tmp_174, %tmp_177" [segmentation.cpp:37]   --->   Operation 81 'dadd' 'x_assign' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 8.37>
+ST_23 : Operation 82 [5/6] (8.37ns)   --->   "%x_assign = fadd double %tmp_174, %tmp_177" [segmentation.cpp:37]   --->   Operation 82 'dadd' 'x_assign' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 8.37>
+ST_24 : Operation 83 [4/6] (8.37ns)   --->   "%x_assign = fadd double %tmp_174, %tmp_177" [segmentation.cpp:37]   --->   Operation 83 'dadd' 'x_assign' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 8.37>
+ST_25 : Operation 84 [3/6] (8.37ns)   --->   "%x_assign = fadd double %tmp_174, %tmp_177" [segmentation.cpp:37]   --->   Operation 84 'dadd' 'x_assign' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 8.37>
+ST_26 : Operation 85 [2/6] (8.37ns)   --->   "%x_assign = fadd double %tmp_174, %tmp_177" [segmentation.cpp:37]   --->   Operation 85 'dadd' 'x_assign' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 8.37>
+ST_27 : Operation 86 [1/6] (8.37ns)   --->   "%x_assign = fadd double %tmp_174, %tmp_177" [segmentation.cpp:37]   --->   Operation 86 'dadd' 'x_assign' <Predicate = true> <Delay = 8.37> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 5> <II = 1> <Delay = 8.37> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 3.25>
+ST_28 : Operation 87 [1/1] (0.00ns)   --->   "%t_V_1 = bitcast double %x_assign to i64" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:475->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:193->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 87 'bitcast' 't_V_1' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_V = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %t_V_1, i32 52, i32 62) nounwind" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:477->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:193->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 88 'partselect' 'tmp_V' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 89 [1/1] (1.81ns)   --->   "%tmp_i_i = icmp ult i11 %tmp_V, 1022" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:195->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 89 'icmp' 'tmp_i_i' <Predicate = true> <Delay = 1.81> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 90 [1/1] (1.81ns)   --->   "%tmp_213_i_i = icmp ugt i11 %tmp_V, -973" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:198->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 90 'icmp' 'tmp_213_i_i' <Predicate = true> <Delay = 1.81> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.81> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 91 [1/1] (0.00ns)   --->   "%index_V = call i6 @_ssdm_op_PartSelect.i6.i64.i32.i32(i64 %t_V_1, i32 52, i32 57)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:206->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 91 'partselect' 'index_V' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_214_i_i = zext i6 %index_V to i64" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 92 'zext' 'tmp_214_i_i' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 93 [1/1] (0.00ns)   --->   "%mask_table1_addr = getelementptr [64 x i52]* @mask_table1, i64 0, i64 %tmp_214_i_i" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 93 'getelementptr' 'mask_table1_addr' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 94 [2/2] (3.25ns)   --->   "%mask = load i52* %mask_table1_addr, align 8" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 94 'load' 'mask' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 53> <Depth = 64> <ROM>
+ST_28 : Operation 95 [1/1] (0.00ns)   --->   "%one_half_table2_addr = getelementptr [64 x i53]* @one_half_table2, i64 0, i64 %tmp_214_i_i" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:208->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 95 'getelementptr' 'one_half_table2_addr' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 96 [2/2] (3.25ns)   --->   "%one_half = load i53* %one_half_table2_addr, align 8" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:208->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 96 'load' 'one_half' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 53> <Depth = 64> <ROM>
+
+State 29 <SV = 28> <Delay = 3.25>
+ST_29 : Operation 97 [1/2] (3.25ns)   --->   "%mask = load i52* %mask_table1_addr, align 8" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 97 'load' 'mask' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 53> <Depth = 64> <ROM>
+ST_29 : Operation 98 [1/2] (3.25ns)   --->   "%one_half = load i53* %one_half_table2_addr, align 8" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:208->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 98 'load' 'one_half' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 53> <Depth = 64> <ROM>
+
+State 30 <SV = 29> <Delay = 6.30>
+ST_30 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%p_Result_s = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %t_V_1, i32 63)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:475->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:193->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 99 'bitselect' 'p_Result_s' <Predicate = (tmp_i_i)> <Delay = 0.00>
+ST_30 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%p_Result_11 = call i64 @_ssdm_op_BitConcatenate.i64.i1.i63(i1 %p_Result_s, i63 0)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:495->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:13->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:197->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 100 'bitconcatenate' 'p_Result_11' <Predicate = (tmp_i_i)> <Delay = 0.00>
+ST_30 : Operation 101 [1/1] (0.00ns)   --->   "%one_half_cast = zext i53 %one_half to i64" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:208->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 101 'zext' 'one_half_cast' <Predicate = (!tmp_i_i)> <Delay = 0.00>
+ST_30 : Operation 102 [1/1] (3.56ns)   --->   "%p_Val2_s = add i64 %t_V_1, %one_half_cast" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:210->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 102 'add' 'p_Val2_s' <Predicate = (!tmp_i_i)> <Delay = 3.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.12> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_V_2 = trunc i64 %p_Val2_s to i52" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:483->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:484->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:210->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 103 'trunc' 'tmp_V_2' <Predicate = (!tmp_i_i)> <Delay = 0.00>
+ST_30 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_216_i_i = xor i52 %mask, -1" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:212->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 104 'xor' 'tmp_216_i_i' <Predicate = (!tmp_i_i)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%xs_sig_V = and i52 %tmp_V_2, %tmp_216_i_i" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:212->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 105 'and' 'xs_sig_V' <Predicate = (!tmp_i_i)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%tmp_180 = call i12 @_ssdm_op_PartSelect.i12.i64.i32.i32(i64 %p_Val2_s, i32 52, i32 63)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:495->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 106 'partselect' 'tmp_180' <Predicate = (!tmp_i_i)> <Delay = 0.00>
+ST_30 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%p_Result_12 = call i64 @_ssdm_op_BitConcatenate.i64.i12.i52(i12 %tmp_180, i52 %xs_sig_V)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:495->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 107 'bitconcatenate' 'p_Result_12' <Predicate = (!tmp_i_i)> <Delay = 0.00>
+ST_30 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp)   --->   "%sel_tmp_v = select i1 %tmp_i_i, i64 %p_Result_11, i64 %p_Result_12" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 108 'select' 'sel_tmp_v' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_30 : Operation 109 [1/1] (1.37ns) (out node of the LUT)   --->   "%sel_tmp = bitcast i64 %sel_tmp_v to double" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 109 'bitcast' 'sel_tmp' <Predicate = true> <Delay = 1.37>
+ST_30 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node x_assign_1)   --->   "%sel_tmp1 = xor i1 %tmp_i_i, true" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:195->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 110 'xor' 'sel_tmp1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node x_assign_1)   --->   "%sel_tmp2 = and i1 %tmp_213_i_i, %sel_tmp1" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:198->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 111 'and' 'sel_tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 112 [1/1] (1.37ns) (out node of the LUT)   --->   "%x_assign_1 = select i1 %sel_tmp2, double %x_assign, double %sel_tmp" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37]   --->   Operation 112 'select' 'x_assign_1' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_30 : Operation 113 [1/1] (0.00ns)   --->   "%p_Val2_11 = bitcast double %x_assign_1 to i64" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:475->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 113 'bitcast' 'p_Val2_11' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_V_3 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %p_Val2_11, i32 52, i32 62) nounwind" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:477->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 114 'partselect' 'tmp_V_3' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 115 [1/1] (0.00ns)   --->   "%tmp_V_4 = trunc i64 %p_Val2_11 to i52" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:478->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:479->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 115 'trunc' 'tmp_V_4' <Predicate = true> <Delay = 0.00>
+
+State 31 <SV = 30> <Delay = 7.78>
+ST_31 : Operation 116 [1/1] (0.00ns)   --->   "%mantissa_V = call i54 @_ssdm_op_BitConcatenate.i54.i1.i52.i1(i1 true, i52 %tmp_V_4, i1 false)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 116 'bitconcatenate' 'mantissa_V' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%mantissa_V_2_cast = zext i54 %mantissa_V to i113" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 117 'zext' 'mantissa_V_2_cast' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_i_i_i_i_cast4 = zext i11 %tmp_V_3 to i12" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:502->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 118 'zext' 'tmp_i_i_i_i_cast4' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 119 [1/1] (2.12ns)   --->   "%sh_assign = add i12 -1023, %tmp_i_i_i_i_cast4" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:502->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 119 'add' 'sh_assign' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.12> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 120 [1/1] (0.00ns)   --->   "%isNeg = call i1 @_ssdm_op_BitSelect.i1.i12.i32(i12 %sh_assign, i32 11)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 120 'bitselect' 'isNeg' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 121 [1/1] (2.12ns)   --->   "%tmp_i_i_i = sub i11 1023, %tmp_V_3" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 121 'sub' 'tmp_i_i_i' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.12> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_i_i_i_cast = sext i11 %tmp_i_i_i to i12" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 122 'sext' 'tmp_i_i_i_cast' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 123 [1/1] (1.37ns)   --->   "%ush = select i1 %isNeg, i12 %tmp_i_i_i_cast, i12 %sh_assign" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 123 'select' 'ush' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_31 : Operation 124 [1/1] (0.00ns)   --->   "%sh_assign_8_cast = sext i12 %ush to i32" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 124 'sext' 'sh_assign_8_cast' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 125 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_i_i_i_129 = zext i32 %sh_assign_8_cast to i113" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 125 'zext' 'tmp_i_i_i_129' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_i_i_i_cast_130 = zext i32 %sh_assign_8_cast to i54" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 126 'zext' 'tmp_i_i_i_cast_130' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%r_V = lshr i54 %mantissa_V, %tmp_i_i_i_cast_130" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 127 'lshr' 'r_V' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.28> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 128 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%r_V_2 = shl i113 %mantissa_V_2_cast, %tmp_i_i_i_129" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 128 'shl' 'r_V_2' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.28> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_185 = call i1 @_ssdm_op_BitSelect.i1.i54.i32(i54 %r_V, i32 53)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:73->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 129 'bitselect' 'tmp_185' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 130 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_181 = zext i1 %tmp_185 to i8" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:73->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 130 'zext' 'tmp_181' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_182 = call i8 @_ssdm_op_PartSelect.i8.i113.i32.i32(i113 %r_V_2, i32 53, i32 60)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:73->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 131 'partselect' 'tmp_182' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 132 [1/1] (4.28ns) (out node of the LUT)   --->   "%val_V = select i1 %isNeg, i8 %tmp_181, i8 %tmp_182" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37]   --->   Operation 132 'select' 'val_V' <Predicate = true> <Delay = 4.28> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 3.25>
+ST_32 : Operation 133 [1/1] (0.00ns)   --->   "%output_addr = getelementptr [262144 x i8]* %output_r, i64 0, i64 %tmp_192_cast" [segmentation.cpp:40]   --->   Operation 133 'getelementptr' 'output_addr' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 134 [1/1] (3.25ns)   --->   "store i8 %val_V, i8* %output_addr, align 1" [segmentation.cpp:40]   --->   Operation 134 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_32 : Operation 135 [1/1] (0.00ns)   --->   "br label %.preheader" [segmentation.cpp:30]   --->   Operation 135 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', segmentation.cpp:29) [9]  (1.66 ns)
+
+ <State 2>: 2.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', segmentation.cpp:29) [9]  (0 ns)
+	'add' operation ('i', segmentation.cpp:29) [12]  (2.12 ns)
+
+ <State 3>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:30) [19]  (0 ns)
+	'add' operation ('tmp_s', segmentation.cpp:32) [26]  (2.25 ns)
+	'getelementptr' operation ('input_g_addr', segmentation.cpp:33) [29]  (0 ns)
+	'load' operation ('input_g_load', segmentation.cpp:33) on array 'input_g' [33]  (3.26 ns)
+
+ <State 4>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('input_g_load', segmentation.cpp:33) on array 'input_g' [33]  (3.26 ns)
+
+ <State 5>: 8.01ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_172', segmentation.cpp:37) [37]  (8.01 ns)
+
+ <State 6>: 8.01ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_172', segmentation.cpp:37) [37]  (8.01 ns)
+
+ <State 7>: 8.01ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_172', segmentation.cpp:37) [37]  (8.01 ns)
+
+ <State 8>: 8.01ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_172', segmentation.cpp:37) [37]  (8.01 ns)
+
+ <State 9>: 8.01ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_172', segmentation.cpp:37) [37]  (8.01 ns)
+
+ <State 10>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_173', segmentation.cpp:37) [38]  (7.79 ns)
+
+ <State 11>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_173', segmentation.cpp:37) [38]  (7.79 ns)
+
+ <State 12>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_173', segmentation.cpp:37) [38]  (7.79 ns)
+
+ <State 13>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_173', segmentation.cpp:37) [38]  (7.79 ns)
+
+ <State 14>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_173', segmentation.cpp:37) [38]  (7.79 ns)
+
+ <State 15>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_173', segmentation.cpp:37) [38]  (7.79 ns)
+
+ <State 16>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_174', segmentation.cpp:37) [39]  (8.37 ns)
+
+ <State 17>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_174', segmentation.cpp:37) [39]  (8.37 ns)
+
+ <State 18>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_174', segmentation.cpp:37) [39]  (8.37 ns)
+
+ <State 19>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_174', segmentation.cpp:37) [39]  (8.37 ns)
+
+ <State 20>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_174', segmentation.cpp:37) [39]  (8.37 ns)
+
+ <State 21>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_174', segmentation.cpp:37) [39]  (8.37 ns)
+
+ <State 22>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('x', segmentation.cpp:37) [41]  (8.37 ns)
+
+ <State 23>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('x', segmentation.cpp:37) [41]  (8.37 ns)
+
+ <State 24>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('x', segmentation.cpp:37) [41]  (8.37 ns)
+
+ <State 25>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('x', segmentation.cpp:37) [41]  (8.37 ns)
+
+ <State 26>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('x', segmentation.cpp:37) [41]  (8.37 ns)
+
+ <State 27>: 8.37ns
+The critical path consists of the following:
+	'dadd' operation ('x', segmentation.cpp:37) [41]  (8.37 ns)
+
+ <State 28>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('mask_table1_addr', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37) [50]  (0 ns)
+	'load' operation ('mask', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37) on array 'mask_table1' [51]  (3.26 ns)
+
+ <State 29>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('mask', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:207->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37) on array 'mask_table1' [51]  (3.26 ns)
+
+ <State 30>: 6.3ns
+The critical path consists of the following:
+	'add' operation ('__Val2__', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:210->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37) [55]  (3.56 ns)
+	'select' operation ('sel_tmp_v', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37) [61]  (0 ns)
+	'select' operation ('x', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:512->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:526->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_round.h:213->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/c/rounddouble.cpp:6->segmentation.cpp:37) [65]  (1.37 ns)
+	blocking operation 1.37 ns on control path)
+
+ <State 31>: 7.78ns
+The critical path consists of the following:
+	'add' operation ('sh', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:502->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37) [72]  (2.13 ns)
+	'select' operation ('sh', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37) [76]  (1.37 ns)
+	'lshr' operation ('r.V', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37) [80]  (0 ns)
+	'select' operation ('val.V', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37) [85]  (4.29 ns)
+
+ <State 32>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('output_addr', segmentation.cpp:40) [31]  (0 ns)
+	'store' operation (segmentation.cpp:40) of variable 'val.V', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:66->segmentation.cpp:37 on array 'output_r' [86]  (3.26 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

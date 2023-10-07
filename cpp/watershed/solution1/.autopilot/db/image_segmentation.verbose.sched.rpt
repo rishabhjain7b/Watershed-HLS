@@ -1,0 +1,605 @@
+
+
+================================================================
+== Vivado HLS Report for 'image_segmentation'
+================================================================
+* Date:           Sun Apr 23 06:25:47 2023
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        watershed
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.606|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |      Latency      | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  1049600|  1049600|      2050|          -|          -|   512|    no    |
+        | + Loop 1.1  |     2048|     2048|         4|          -|          -|   512|    no    |
+        |- Loop 2     |  2622464|  2622464|      5122|          -|          -|   512|    no    |
+        | + Loop 2.1  |     5120|     5120|        10|          -|          -|   512|    no    |
+        |- Loop 3     |   525312|   525312|      1026|          -|          -|   512|    no    |
+        | + Loop 3.1  |     1024|     1024|         2|          -|          -|   512|    no    |
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 35
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	18  / (exitcond1_i)
+	14  / (!exitcond1_i)
+14 --> 
+	15  / (!exitcond_i)
+	13  / (exitcond_i)
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	14  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	32  / (exitcond1_i7)
+	22  / (!exitcond1_i7)
+22 --> 
+	23  / (!exitcond_i1)
+	21  / (exitcond_i1)
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	22  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / (!exitcond3_i)
+34 --> 
+	35  / (!exitcond2_i)
+	33  / (exitcond2_i)
+35 --> 
+	34  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%max = alloca float"   --->   Operation 36 'alloca' 'max' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [2/2] (0.00ns)   --->   "call fastcc void @"RGBtoGray<512, 512>2"([262144 x i1]* %input_image_r, [262144 x i1]* %input_image_g, [262144 x i1]* %input_image_b, [262144 x i8]* @grayOutput)" [segmentation.cpp:587]   --->   Operation 37 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 38 [1/2] (0.00ns)   --->   "call fastcc void @"RGBtoGray<512, 512>2"([262144 x i1]* %input_image_r, [262144 x i1]* %input_image_g, [262144 x i1]* %input_image_b, [262144 x i8]* @grayOutput)" [segmentation.cpp:587]   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 39 [2/2] (0.00ns)   --->   "call fastcc void @thresholdOtsu([262144 x i8]* @grayOutput, [262144 x i1]* @binaryThreshold)" [segmentation.cpp:590]   --->   Operation 39 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 40 [1/2] (0.00ns)   --->   "call fastcc void @thresholdOtsu([262144 x i8]* @grayOutput, [262144 x i1]* @binaryThreshold)" [segmentation.cpp:590]   --->   Operation 40 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 41 [2/2] (0.00ns)   --->   "call fastcc void @morphologyEx([262144 x i8]* @morphOpening)" [segmentation.cpp:593]   --->   Operation 41 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 42 [1/2] (0.00ns)   --->   "call fastcc void @morphologyEx([262144 x i8]* @morphOpening)" [segmentation.cpp:593]   --->   Operation 42 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 43 [2/2] (0.00ns)   --->   "call fastcc void @dilate([262144 x i8]* @morphOpening)" [segmentation.cpp:599]   --->   Operation 43 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 44 [1/2] (0.00ns)   --->   "call fastcc void @dilate([262144 x i8]* @morphOpening)" [segmentation.cpp:599]   --->   Operation 44 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 45 [2/2] (0.00ns)   --->   "call fastcc void @distanceTransform([262144 x float]* @distanceTransformOut)" [segmentation.cpp:602]   --->   Operation 45 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 46 [1/2] (0.00ns)   --->   "call fastcc void @distanceTransform([262144 x float]* @distanceTransformOut)" [segmentation.cpp:602]   --->   Operation 46 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 3.25>
+ST_11 : Operation 47 [2/2] (3.25ns)   --->   "%min = load float* getelementptr inbounds ([262144 x float]* @distanceTransformOut, i64 0, i64 0), align 16" [segmentation.cpp:312->segmentation.cpp:605]   --->   Operation 47 'load' 'min' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+
+State 12 <SV = 11> <Delay = 4.92>
+ST_12 : Operation 48 [1/2] (3.25ns)   --->   "%min = load float* getelementptr inbounds ([262144 x float]* @distanceTransformOut, i64 0, i64 0), align 16" [segmentation.cpp:312->segmentation.cpp:605]   --->   Operation 48 'load' 'min' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_12 : Operation 49 [1/1] (1.66ns)   --->   "store float %min, float* %max" [segmentation.cpp:313->segmentation.cpp:605]   --->   Operation 49 'store' <Predicate = true> <Delay = 1.66>
+ST_12 : Operation 50 [1/1] (1.66ns)   --->   "br label %.loopexit2" [segmentation.cpp:315->segmentation.cpp:605]   --->   Operation 50 'br' <Predicate = true> <Delay = 1.66>
+
+State 13 <SV = 12> <Delay = 5.64>
+ST_13 : Operation 51 [1/1] (0.00ns)   --->   "%i_i = phi i10 [ 0, %0 ], [ %i, %.loopexit2.loopexit ]"   --->   Operation 51 'phi' 'i_i' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 52 [1/1] (1.70ns)   --->   "%exitcond1_i = icmp eq i10 %i_i, -512" [segmentation.cpp:315->segmentation.cpp:605]   --->   Operation 52 'icmp' 'exitcond1_i' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 53 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 53 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 54 [1/1] (2.12ns)   --->   "%i = add i10 %i_i, 1" [segmentation.cpp:315->segmentation.cpp:605]   --->   Operation 54 'add' 'i' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 55 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i, label %"minMaxLoc<512, 512>.exit", label %.preheader.preheader.i" [segmentation.cpp:315->segmentation.cpp:605]   --->   Operation 55 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_s = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i_i, i9 0)" [segmentation.cpp:315->segmentation.cpp:605]   --->   Operation 56 'bitconcatenate' 'tmp_s' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_13 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_79_cast = zext i19 %tmp_s to i20" [segmentation.cpp:316->segmentation.cpp:605]   --->   Operation 57 'zext' 'tmp_79_cast' <Predicate = (!exitcond1_i)> <Delay = 0.00>
+ST_13 : Operation 58 [1/1] (1.66ns)   --->   "br label %.preheader.i" [segmentation.cpp:316->segmentation.cpp:605]   --->   Operation 58 'br' <Predicate = (!exitcond1_i)> <Delay = 1.66>
+ST_13 : Operation 59 [1/1] (0.00ns)   --->   "%max_load = load float* %max" [segmentation.cpp:608]   --->   Operation 59 'load' 'max_load' <Predicate = (exitcond1_i)> <Delay = 0.00>
+ST_13 : Operation 60 [4/4] (5.64ns)   --->   "%thresholdValue_assig = fmul float %max_load, 5.000000e-01" [segmentation.cpp:608]   --->   Operation 60 'fmul' 'thresholdValue_assig' <Predicate = (exitcond1_i)> <Delay = 5.64> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.64> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 5.50>
+ST_14 : Operation 61 [1/1] (0.00ns)   --->   "%j_i = phi i10 [ %j, %1 ], [ 0, %.preheader.preheader.i ]"   --->   Operation 61 'phi' 'j_i' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 62 [1/1] (1.70ns)   --->   "%exitcond_i = icmp eq i10 %j_i, -512" [segmentation.cpp:316->segmentation.cpp:605]   --->   Operation 62 'icmp' 'exitcond_i' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 63 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 63 'speclooptripcount' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 64 [1/1] (2.12ns)   --->   "%j = add i10 %j_i, 1" [segmentation.cpp:316->segmentation.cpp:605]   --->   Operation 64 'add' 'j' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 65 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %.loopexit2.loopexit, label %1" [segmentation.cpp:316->segmentation.cpp:605]   --->   Operation 65 'br' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_i_cast = zext i10 %j_i to i20" [segmentation.cpp:317->segmentation.cpp:605]   --->   Operation 66 'zext' 'tmp_i_cast' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_14 : Operation 67 [1/1] (2.25ns)   --->   "%tmp_62 = add i20 %tmp_79_cast, %tmp_i_cast" [segmentation.cpp:317->segmentation.cpp:605]   --->   Operation 67 'add' 'tmp_62' <Predicate = (!exitcond_i)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_82_cast = zext i20 %tmp_62 to i64" [segmentation.cpp:317->segmentation.cpp:605]   --->   Operation 68 'zext' 'tmp_82_cast' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_14 : Operation 69 [1/1] (0.00ns)   --->   "%distanceTransformOut_1 = getelementptr [262144 x float]* @distanceTransformOut, i64 0, i64 %tmp_82_cast" [segmentation.cpp:317->segmentation.cpp:605]   --->   Operation 69 'getelementptr' 'distanceTransformOut_1' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_14 : Operation 70 [2/2] (3.25ns)   --->   "%val = load float* %distanceTransformOut_1, align 4" [segmentation.cpp:317->segmentation.cpp:605]   --->   Operation 70 'load' 'val' <Predicate = (!exitcond_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_14 : Operation 71 [1/1] (0.00ns)   --->   "br label %.loopexit2"   --->   Operation 71 'br' <Predicate = (exitcond_i)> <Delay = 0.00>
+
+State 15 <SV = 14> <Delay = 3.25>
+ST_15 : Operation 72 [1/2] (3.25ns)   --->   "%val = load float* %distanceTransformOut_1, align 4" [segmentation.cpp:317->segmentation.cpp:605]   --->   Operation 72 'load' 'val' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+
+State 16 <SV = 15> <Delay = 6.61>
+ST_16 : Operation 73 [1/1] (0.00ns)   --->   "%max_load_1 = load float* %max" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 73 'load' 'max_load_1' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 74 [1/1] (6.61ns)   --->   "%tmp_34 = fcmp ogt float %val, %max_load_1" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 74 'fcmp' 'tmp_34' <Predicate = true> <Delay = 6.61> <Core = "FCmp">   --->   Core 110 'FCmp' <Latency = 0> <II = 1> <Delay = 6.61> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 6.38>
+ST_17 : Operation 75 [1/1] (0.00ns)   --->   "%val_to_int = bitcast float %val to i32" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 75 'bitcast' 'val_to_int' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 76 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %val_to_int, i32 23, i32 30)" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 76 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_63 = trunc i32 %val_to_int to i23" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 77 'trunc' 'tmp_63' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 78 [1/1] (0.00ns)   --->   "%max_1_i_to_int = bitcast float %max_load_1 to i32" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 78 'bitcast' 'max_1_i_to_int' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_29 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %max_1_i_to_int, i32 23, i32 30)" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 79 'partselect' 'tmp_29' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_64 = trunc i32 %max_1_i_to_int to i23" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 80 'trunc' 'tmp_64' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 81 [1/1] (1.47ns)   --->   "%notlhs = icmp ne i8 %tmp, -1" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 81 'icmp' 'notlhs' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 82 [1/1] (2.40ns)   --->   "%notrhs = icmp eq i23 %tmp_63, 0" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 82 'icmp' 'notrhs' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node tmp_35)   --->   "%tmp_31 = or i1 %notrhs, %notlhs" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 83 'or' 'tmp_31' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 84 [1/1] (1.47ns)   --->   "%notlhs2 = icmp ne i8 %tmp_29, -1" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 84 'icmp' 'notlhs2' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 85 [1/1] (2.40ns)   --->   "%notrhs2 = icmp eq i23 %tmp_64, 0" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 85 'icmp' 'notrhs2' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node tmp_35)   --->   "%tmp_32 = or i1 %notrhs2, %notlhs2" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 86 'or' 'tmp_32' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 87 [1/1] (0.00ns) (grouped into LUT with out node tmp_35)   --->   "%tmp_33 = and i1 %tmp_31, %tmp_32" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 87 'and' 'tmp_33' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 88 [1/1] (0.94ns) (out node of the LUT)   --->   "%tmp_35 = and i1 %tmp_33, %tmp_34" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 88 'and' 'tmp_35' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 89 [1/1] (1.37ns) (out node of the LUT)   --->   "%max_2 = select i1 %tmp_35, float %val, float %max_load_1" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 89 'select' 'max_2' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_17 : Operation 90 [1/1] (1.66ns)   --->   "store float %max_2, float* %max" [segmentation.cpp:321->segmentation.cpp:605]   --->   Operation 90 'store' <Predicate = true> <Delay = 1.66>
+ST_17 : Operation 91 [1/1] (0.00ns)   --->   "br label %.preheader.i" [segmentation.cpp:316->segmentation.cpp:605]   --->   Operation 91 'br' <Predicate = true> <Delay = 0.00>
+
+State 18 <SV = 13> <Delay = 5.64>
+ST_18 : Operation 92 [3/4] (5.64ns)   --->   "%thresholdValue_assig = fmul float %max_load, 5.000000e-01" [segmentation.cpp:608]   --->   Operation 92 'fmul' 'thresholdValue_assig' <Predicate = true> <Delay = 5.64> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.64> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 14> <Delay = 5.64>
+ST_19 : Operation 93 [2/4] (5.64ns)   --->   "%thresholdValue_assig = fmul float %max_load, 5.000000e-01" [segmentation.cpp:608]   --->   Operation 93 'fmul' 'thresholdValue_assig' <Predicate = true> <Delay = 5.64> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.64> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 15> <Delay = 8.04>
+ST_20 : Operation 94 [1/4] (5.64ns)   --->   "%thresholdValue_assig = fmul float %max_load, 5.000000e-01" [segmentation.cpp:608]   --->   Operation 94 'fmul' 'thresholdValue_assig' <Predicate = true> <Delay = 5.64> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 3> <II = 1> <Delay = 5.64> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 95 [1/1] (0.00ns)   --->   "%thresholdValue_assig_1 = bitcast float %thresholdValue_assig to i32" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 95 'bitcast' 'thresholdValue_assig_1' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_61 = trunc i32 %thresholdValue_assig_1 to i23" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 96 'trunc' 'tmp_61' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 97 [1/1] (2.40ns)   --->   "%notrhs4 = icmp eq i23 %tmp_61, 0" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 97 'icmp' 'notrhs4' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 98 [1/1] (1.66ns)   --->   "br label %.loopexit1" [segmentation.cpp:335->segmentation.cpp:608]   --->   Operation 98 'br' <Predicate = true> <Delay = 1.66>
+
+State 21 <SV = 16> <Delay = 2.12>
+ST_21 : Operation 99 [1/1] (0.00ns)   --->   "%i_i6 = phi i10 [ 0, %"minMaxLoc<512, 512>.exit" ], [ %i_10, %.loopexit1.loopexit ]"   --->   Operation 99 'phi' 'i_i6' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 100 [1/1] (1.70ns)   --->   "%exitcond1_i7 = icmp eq i10 %i_i6, -512" [segmentation.cpp:335->segmentation.cpp:608]   --->   Operation 100 'icmp' 'exitcond1_i7' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 101 [1/1] (0.00ns)   --->   "%empty_42 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 101 'speclooptripcount' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 102 [1/1] (2.12ns)   --->   "%i_10 = add i10 %i_i6, 1" [segmentation.cpp:335->segmentation.cpp:608]   --->   Operation 102 'add' 'i_10' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 103 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i7, label %"subtractPixels<512, 512>.exit", label %.preheader.preheader.i9" [segmentation.cpp:335->segmentation.cpp:608]   --->   Operation 103 'br' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_60 = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i_i6, i9 0)" [segmentation.cpp:335->segmentation.cpp:608]   --->   Operation 104 'bitconcatenate' 'tmp_60' <Predicate = (!exitcond1_i7)> <Delay = 0.00>
+ST_21 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_81_cast = zext i19 %tmp_60 to i20" [segmentation.cpp:336->segmentation.cpp:608]   --->   Operation 105 'zext' 'tmp_81_cast' <Predicate = (!exitcond1_i7)> <Delay = 0.00>
+ST_21 : Operation 106 [1/1] (1.66ns)   --->   "br label %.preheader.i12" [segmentation.cpp:336->segmentation.cpp:608]   --->   Operation 106 'br' <Predicate = (!exitcond1_i7)> <Delay = 1.66>
+ST_21 : Operation 107 [2/2] (0.00ns)   --->   "call fastcc void @connectedComponents()" [segmentation.cpp:614]   --->   Operation 107 'call' <Predicate = (exitcond1_i7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_21 : Operation 108 [2/2] (0.00ns)   --->   "call fastcc void @watershed_algorithm()" [segmentation.cpp:621]   --->   Operation 108 'call' <Predicate = (exitcond1_i7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 22 <SV = 17> <Delay = 5.50>
+ST_22 : Operation 109 [1/1] (0.00ns)   --->   "%j_i1 = phi i10 [ %j_9, %2 ], [ 0, %.preheader.preheader.i9 ]"   --->   Operation 109 'phi' 'j_i1' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 110 [1/1] (1.70ns)   --->   "%exitcond_i1 = icmp eq i10 %j_i1, -512" [segmentation.cpp:336->segmentation.cpp:608]   --->   Operation 110 'icmp' 'exitcond_i1' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 111 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 111 'speclooptripcount' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 112 [1/1] (2.12ns)   --->   "%j_9 = add i10 %j_i1, 1" [segmentation.cpp:336->segmentation.cpp:608]   --->   Operation 112 'add' 'j_9' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 113 [1/1] (0.00ns)   --->   "br i1 %exitcond_i1, label %.loopexit1.loopexit, label %2" [segmentation.cpp:336->segmentation.cpp:608]   --->   Operation 113 'br' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_i9_cast = zext i10 %j_i1 to i20" [segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 114 'zext' 'tmp_i9_cast' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_22 : Operation 115 [1/1] (2.25ns)   --->   "%tmp_66 = add i20 %tmp_i9_cast, %tmp_81_cast" [segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 115 'add' 'tmp_66' <Predicate = (!exitcond_i1)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_85_cast = zext i20 %tmp_66 to i64" [segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 116 'zext' 'tmp_85_cast' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_22 : Operation 117 [1/1] (0.00ns)   --->   "%distanceTransformOut_2 = getelementptr [262144 x float]* @distanceTransformOut, i64 0, i64 %tmp_85_cast" [segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 117 'getelementptr' 'distanceTransformOut_2' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_22 : Operation 118 [2/2] (3.25ns)   --->   "%distanceTransformOut_3 = load float* %distanceTransformOut_2, align 4" [segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 118 'load' 'distanceTransformOut_3' <Predicate = (!exitcond_i1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_22 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_40 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %thresholdValue_assig_1, i32 23, i32 30)" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 119 'partselect' 'tmp_40' <Predicate = (!exitcond_i1)> <Delay = 0.00>
+ST_22 : Operation 120 [1/1] (1.47ns)   --->   "%notlhs4 = icmp ne i8 %tmp_40, -1" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 120 'icmp' 'notlhs4' <Predicate = (!exitcond_i1)> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 121 [1/1] (0.00ns)   --->   "br label %.loopexit1"   --->   Operation 121 'br' <Predicate = (exitcond_i1)> <Delay = 0.00>
+
+State 23 <SV = 18> <Delay = 3.25>
+ST_23 : Operation 122 [1/2] (3.25ns)   --->   "%distanceTransformOut_3 = load float* %distanceTransformOut_2, align 4" [segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 122 'load' 'distanceTransformOut_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_23 : Operation 123 [1/1] (0.00ns)   --->   "%p_Val2_s = bitcast float %distanceTransformOut_3 to i32" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:310->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:319->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 123 'bitcast' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_V = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_s, i32 23, i32 30) nounwind" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:317->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:319->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 124 'partselect' 'tmp_V' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 125 [1/1] (0.00ns)   --->   "%tmp_V_1 = trunc i32 %p_Val2_s to i23" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:318->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:319->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:65->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 125 'trunc' 'tmp_V_1' <Predicate = true> <Delay = 0.00>
+
+State 24 <SV = 19> <Delay = 7.57>
+ST_24 : Operation 126 [1/1] (0.00ns)   --->   "%mantissa_V = call i25 @_ssdm_op_BitConcatenate.i25.i1.i23.i1(i1 true, i23 %tmp_V_1, i1 false)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 126 'bitconcatenate' 'mantissa_V' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%mantissa_V_1_cast1 = zext i25 %mantissa_V to i55" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:67->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 127 'zext' 'mantissa_V_1_cast1' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_i_i_i_i_i_cast = zext i8 %tmp_V to i9" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 128 'zext' 'tmp_i_i_i_i_i_cast' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 129 [1/1] (2.11ns)   --->   "%sh_assign = add i9 -127, %tmp_i_i_i_i_i_cast" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 129 'add' 'sh_assign' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 130 [1/1] (0.00ns)   --->   "%isNeg = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %sh_assign, i32 8)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 130 'bitselect' 'isNeg' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 131 [1/1] (2.11ns)   --->   "%tmp_i_i_i_i = sub i8 127, %tmp_V" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 131 'sub' 'tmp_i_i_i_i' <Predicate = true> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 132 [1/1] (0.00ns)   --->   "%tmp_i_i_i_i_cast = sext i8 %tmp_i_i_i_i to i9" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 132 'sext' 'tmp_i_i_i_i_cast' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 133 [1/1] (1.37ns)   --->   "%ush = select i1 %isNeg, i9 %tmp_i_i_i_i_cast, i9 %sh_assign" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 133 'select' 'ush' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_24 : Operation 134 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%sh_assign_6_cast = sext i9 %ush to i32" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 134 'sext' 'sh_assign_6_cast' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%sh_assign_6_cast_cas = sext i9 %ush to i25" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 135 'sext' 'sh_assign_6_cast_cas' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 136 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_i_i_i_i_44 = zext i32 %sh_assign_6_cast to i55" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 136 'zext' 'tmp_i_i_i_i_44' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 137 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%r_V = lshr i25 %mantissa_V, %sh_assign_6_cast_cas" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 137 'lshr' 'r_V' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.08> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 138 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%r_V_1 = shl i55 %mantissa_V_1_cast1, %tmp_i_i_i_i_44" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 138 'shl' 'r_V_1' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.08> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 139 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_69 = call i1 @_ssdm_op_BitSelect.i1.i25.i32(i25 %r_V, i32 24)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:73->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 139 'bitselect' 'tmp_69' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 140 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_67 = zext i1 %tmp_69 to i8" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:73->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 140 'zext' 'tmp_67' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 141 [1/1] (0.00ns) (grouped into LUT with out node val_V)   --->   "%tmp_68 = call i8 @_ssdm_op_PartSelect.i8.i55.i32.i32(i55 %r_V_1, i32 24, i32 31)" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:73->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 141 'partselect' 'tmp_68' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 142 [1/1] (4.08ns) (out node of the LUT)   --->   "%val_V = select i1 %isNeg, i8 %tmp_67, i8 %tmp_68" [/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608]   --->   Operation 142 'select' 'val_V' <Predicate = true> <Delay = 4.08> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 25 <SV = 20> <Delay = 8.09>
+ST_25 : Operation 143 [1/1] (0.00ns)   --->   "%tmp_53_i = zext i8 %val_V to i32" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 143 'zext' 'tmp_53_i' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 144 [5/5] (8.09ns)   --->   "%tmp_54_i = sitofp i32 %tmp_53_i to float" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 144 'sitofp' 'tmp_54_i' <Predicate = true> <Delay = 8.09> <Core = "Int2Float">   --->   Core 111 'Int2Float' <Latency = 4> <II = 1> <Delay = 8.09> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 26 <SV = 21> <Delay = 8.09>
+ST_26 : Operation 145 [4/5] (8.09ns)   --->   "%tmp_54_i = sitofp i32 %tmp_53_i to float" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 145 'sitofp' 'tmp_54_i' <Predicate = true> <Delay = 8.09> <Core = "Int2Float">   --->   Core 111 'Int2Float' <Latency = 4> <II = 1> <Delay = 8.09> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 27 <SV = 22> <Delay = 8.09>
+ST_27 : Operation 146 [3/5] (8.09ns)   --->   "%tmp_54_i = sitofp i32 %tmp_53_i to float" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 146 'sitofp' 'tmp_54_i' <Predicate = true> <Delay = 8.09> <Core = "Int2Float">   --->   Core 111 'Int2Float' <Latency = 4> <II = 1> <Delay = 8.09> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 28 <SV = 23> <Delay = 8.09>
+ST_28 : Operation 147 [2/5] (8.09ns)   --->   "%tmp_54_i = sitofp i32 %tmp_53_i to float" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 147 'sitofp' 'tmp_54_i' <Predicate = true> <Delay = 8.09> <Core = "Int2Float">   --->   Core 111 'Int2Float' <Latency = 4> <II = 1> <Delay = 8.09> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 29 <SV = 24> <Delay = 8.09>
+ST_29 : Operation 148 [1/5] (8.09ns)   --->   "%tmp_54_i = sitofp i32 %tmp_53_i to float" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 148 'sitofp' 'tmp_54_i' <Predicate = true> <Delay = 8.09> <Core = "Int2Float">   --->   Core 111 'Int2Float' <Latency = 4> <II = 1> <Delay = 8.09> <FuncUnit> <Opcode : 'sitofp' 'uitofp'> <InPorts = 1> <OutPorts = 1>
+
+State 30 <SV = 25> <Delay = 7.56>
+ST_30 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_54_i_to_int = bitcast float %tmp_54_i to i32" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 149 'bitcast' 'tmp_54_i_to_int' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 150 [1/1] (0.00ns)   --->   "%tmp_38 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_54_i_to_int, i32 23, i32 30)" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 150 'partselect' 'tmp_38' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 151 [1/1] (0.00ns)   --->   "%tmp_70 = trunc i32 %tmp_54_i_to_int to i23" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 151 'trunc' 'tmp_70' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 152 [1/1] (1.47ns)   --->   "%notlhs3 = icmp ne i8 %tmp_38, -1" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 152 'icmp' 'notlhs3' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 153 [1/1] (2.40ns)   --->   "%notrhs3 = icmp eq i23 %tmp_70, 0" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 153 'icmp' 'notrhs3' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 154 [1/1] (0.00ns) (grouped into LUT with out node tmp_46)   --->   "%tmp_42 = or i1 %notrhs3, %notlhs3" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 154 'or' 'tmp_42' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 155 [1/1] (0.00ns) (grouped into LUT with out node tmp_46)   --->   "%tmp_43 = or i1 %notrhs4, %notlhs4" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 155 'or' 'tmp_43' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 156 [1/1] (0.00ns) (grouped into LUT with out node tmp_46)   --->   "%tmp_44 = and i1 %tmp_42, %tmp_43" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 156 'and' 'tmp_44' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 157 [1/1] (6.61ns)   --->   "%tmp_45 = fcmp ogt float %tmp_54_i, %thresholdValue_assig" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 157 'fcmp' 'tmp_45' <Predicate = true> <Delay = 6.61> <Core = "FCmp">   --->   Core 110 'FCmp' <Latency = 0> <II = 1> <Delay = 6.61> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 158 [1/1] (0.94ns) (out node of the LUT)   --->   "%tmp_46 = and i1 %tmp_44, %tmp_45" [segmentation.cpp:338->segmentation.cpp:608]   --->   Operation 158 'and' 'tmp_46' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 26> <Delay = 3.25>
+ST_31 : Operation 159 [1/1] (0.00ns)   --->   "%sureForeground_addr = getelementptr [262144 x i1]* @sureForeground, i64 0, i64 %tmp_85_cast" [segmentation.cpp:339->segmentation.cpp:608]   --->   Operation 159 'getelementptr' 'sureForeground_addr' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 160 [1/1] (3.25ns)   --->   "store i1 %tmp_46, i1* %sureForeground_addr, align 1" [segmentation.cpp:339->segmentation.cpp:608]   --->   Operation 160 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_31 : Operation 161 [1/1] (0.00ns)   --->   "br label %.preheader.i12" [segmentation.cpp:336->segmentation.cpp:608]   --->   Operation 161 'br' <Predicate = true> <Delay = 0.00>
+
+State 32 <SV = 17> <Delay = 1.66>
+ST_32 : Operation 162 [1/2] (0.00ns)   --->   "call fastcc void @connectedComponents()" [segmentation.cpp:614]   --->   Operation 162 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_32 : Operation 163 [1/2] (0.00ns)   --->   "call fastcc void @watershed_algorithm()" [segmentation.cpp:621]   --->   Operation 163 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_32 : Operation 164 [1/1] (1.66ns)   --->   "br label %.loopexit" [segmentation.cpp:549->segmentation.cpp:624]   --->   Operation 164 'br' <Predicate = true> <Delay = 1.66>
+
+State 33 <SV = 18> <Delay = 2.12>
+ST_33 : Operation 165 [1/1] (0.00ns)   --->   "%i_i2 = phi i10 [ 0, %"subtractPixels<512, 512>.exit" ], [ %i_11, %.loopexit.loopexit ]"   --->   Operation 165 'phi' 'i_i2' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 166 [1/1] (1.70ns)   --->   "%exitcond3_i = icmp eq i10 %i_i2, -512" [segmentation.cpp:549->segmentation.cpp:624]   --->   Operation 166 'icmp' 'exitcond3_i' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 167 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 167 'speclooptripcount' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 168 [1/1] (2.12ns)   --->   "%i_11 = add i10 %i_i2, 1" [segmentation.cpp:549->segmentation.cpp:624]   --->   Operation 168 'add' 'i_11' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 169 [1/1] (0.00ns)   --->   "br i1 %exitcond3_i, label %"makeBoundary<512, 512>.exit", label %.preheader5.preheader.i" [segmentation.cpp:549->segmentation.cpp:624]   --->   Operation 169 'br' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 170 [1/1] (0.00ns)   --->   "%tmp_65 = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i_i2, i9 0)" [segmentation.cpp:549->segmentation.cpp:624]   --->   Operation 170 'bitconcatenate' 'tmp_65' <Predicate = (!exitcond3_i)> <Delay = 0.00>
+ST_33 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_84_cast = zext i19 %tmp_65 to i20" [segmentation.cpp:550->segmentation.cpp:624]   --->   Operation 171 'zext' 'tmp_84_cast' <Predicate = (!exitcond3_i)> <Delay = 0.00>
+ST_33 : Operation 172 [1/1] (1.66ns)   --->   "br label %.preheader5.i" [segmentation.cpp:550->segmentation.cpp:624]   --->   Operation 172 'br' <Predicate = (!exitcond3_i)> <Delay = 1.66>
+ST_33 : Operation 173 [1/1] (0.00ns)   --->   "ret void" [segmentation.cpp:625]   --->   Operation 173 'ret' <Predicate = (exitcond3_i)> <Delay = 0.00>
+
+State 34 <SV = 19> <Delay = 5.50>
+ST_34 : Operation 174 [1/1] (0.00ns)   --->   "%j_i4 = phi i10 [ %j_10, %3 ], [ 0, %.preheader5.preheader.i ]"   --->   Operation 174 'phi' 'j_i4' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 175 [1/1] (1.70ns)   --->   "%exitcond2_i = icmp eq i10 %j_i4, -512" [segmentation.cpp:550->segmentation.cpp:624]   --->   Operation 175 'icmp' 'exitcond2_i' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 176 [1/1] (0.00ns)   --->   "%empty_46 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 176 'speclooptripcount' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 177 [1/1] (2.12ns)   --->   "%j_10 = add i10 %j_i4, 1" [segmentation.cpp:550->segmentation.cpp:624]   --->   Operation 177 'add' 'j_10' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 178 [1/1] (0.00ns)   --->   "br i1 %exitcond2_i, label %.loopexit.loopexit, label %3" [segmentation.cpp:550->segmentation.cpp:624]   --->   Operation 178 'br' <Predicate = true> <Delay = 0.00>
+ST_34 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_i5_cast = zext i10 %j_i4 to i20" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 179 'zext' 'tmp_i5_cast' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_34 : Operation 180 [1/1] (2.25ns)   --->   "%tmp_71 = add i20 %tmp_84_cast, %tmp_i5_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 180 'add' 'tmp_71' <Predicate = (!exitcond2_i)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.25> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_89_cast = zext i20 %tmp_71 to i64" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 181 'zext' 'tmp_89_cast' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_34 : Operation 182 [1/1] (0.00ns)   --->   "%input_image_r_addr = getelementptr [262144 x i1]* %input_image_r, i64 0, i64 %tmp_89_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 182 'getelementptr' 'input_image_r_addr' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_34 : Operation 183 [1/1] (0.00ns)   --->   "%input_image_g_addr = getelementptr [262144 x i1]* %input_image_g, i64 0, i64 %tmp_89_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 183 'getelementptr' 'input_image_g_addr' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_34 : Operation 184 [1/1] (0.00ns)   --->   "%input_image_b_addr = getelementptr [262144 x i1]* %input_image_b, i64 0, i64 %tmp_89_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 184 'getelementptr' 'input_image_b_addr' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_34 : Operation 185 [2/2] (3.25ns)   --->   "%input_image_r_load = load i1* %input_image_r_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 185 'load' 'input_image_r_load' <Predicate = (!exitcond2_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_34 : Operation 186 [2/2] (3.25ns)   --->   "%input_image_g_load = load i1* %input_image_g_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 186 'load' 'input_image_g_load' <Predicate = (!exitcond2_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_34 : Operation 187 [2/2] (3.25ns)   --->   "%input_image_b_load = load i1* %input_image_b_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 187 'load' 'input_image_b_load' <Predicate = (!exitcond2_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_34 : Operation 188 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 188 'br' <Predicate = (exitcond2_i)> <Delay = 0.00>
+
+State 35 <SV = 20> <Delay = 6.51>
+ST_35 : Operation 189 [1/1] (0.00ns)   --->   "%output_image_r_addr = getelementptr [262144 x i1]* %output_image_r, i64 0, i64 %tmp_89_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 189 'getelementptr' 'output_image_r_addr' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 190 [1/1] (0.00ns)   --->   "%output_image_g_addr = getelementptr [262144 x i1]* %output_image_g, i64 0, i64 %tmp_89_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 190 'getelementptr' 'output_image_g_addr' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 191 [1/1] (0.00ns)   --->   "%output_image_b_addr = getelementptr [262144 x i1]* %output_image_b, i64 0, i64 %tmp_89_cast" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 191 'getelementptr' 'output_image_b_addr' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 192 [1/2] (3.25ns)   --->   "%input_image_r_load = load i1* %input_image_r_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 192 'load' 'input_image_r_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_35 : Operation 193 [1/1] (3.25ns)   --->   "store i1 %input_image_r_load, i1* %output_image_r_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 193 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_35 : Operation 194 [1/2] (3.25ns)   --->   "%input_image_g_load = load i1* %input_image_g_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 194 'load' 'input_image_g_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_35 : Operation 195 [1/1] (3.25ns)   --->   "store i1 %input_image_g_load, i1* %output_image_g_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 195 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_35 : Operation 196 [1/2] (3.25ns)   --->   "%input_image_b_load = load i1* %input_image_b_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 196 'load' 'input_image_b_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_35 : Operation 197 [1/1] (3.25ns)   --->   "store i1 %input_image_b_load, i1* %output_image_b_addr, align 1" [segmentation.cpp:551->segmentation.cpp:624]   --->   Operation 197 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 262144> <RAM>
+ST_35 : Operation 198 [1/1] (0.00ns)   --->   "br label %.preheader5.i" [segmentation.cpp:550->segmentation.cpp:624]   --->   Operation 198 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('min', segmentation.cpp:312->segmentation.cpp:605) on array 'distanceTransformOut' [27]  (3.26 ns)
+
+ <State 12>: 4.92ns
+The critical path consists of the following:
+	'load' operation ('min', segmentation.cpp:312->segmentation.cpp:605) on array 'distanceTransformOut' [27]  (3.26 ns)
+	'store' operation (segmentation.cpp:313->segmentation.cpp:605) of variable 'min', segmentation.cpp:312->segmentation.cpp:605 on local variable 'max' [28]  (1.66 ns)
+
+ <State 13>: 5.64ns
+The critical path consists of the following:
+	'load' operation ('max_load', segmentation.cpp:608) on local variable 'max' [74]  (0 ns)
+	'fmul' operation ('thresholdValue', segmentation.cpp:608) [75]  (5.64 ns)
+
+ <State 14>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:316->segmentation.cpp:605) [41]  (0 ns)
+	'add' operation ('tmp_62', segmentation.cpp:317->segmentation.cpp:605) [49]  (2.25 ns)
+	'getelementptr' operation ('distanceTransformOut_1', segmentation.cpp:317->segmentation.cpp:605) [51]  (0 ns)
+	'load' operation ('val', segmentation.cpp:317->segmentation.cpp:605) on array 'distanceTransformOut' [52]  (3.26 ns)
+
+ <State 15>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('val', segmentation.cpp:317->segmentation.cpp:605) on array 'distanceTransformOut' [52]  (3.26 ns)
+
+ <State 16>: 6.62ns
+The critical path consists of the following:
+	'load' operation ('max_load_1', segmentation.cpp:321->segmentation.cpp:605) on local variable 'max' [47]  (0 ns)
+	'fcmp' operation ('tmp_34', segmentation.cpp:321->segmentation.cpp:605) [66]  (6.62 ns)
+
+ <State 17>: 6.38ns
+The critical path consists of the following:
+	'icmp' operation ('notrhs', segmentation.cpp:321->segmentation.cpp:605) [60]  (2.41 ns)
+	'or' operation ('tmp_31', segmentation.cpp:321->segmentation.cpp:605) [61]  (0 ns)
+	'and' operation ('tmp_33', segmentation.cpp:321->segmentation.cpp:605) [65]  (0 ns)
+	'and' operation ('tmp_35', segmentation.cpp:321->segmentation.cpp:605) [67]  (0.942 ns)
+	'select' operation ('max', segmentation.cpp:321->segmentation.cpp:605) [68]  (1.37 ns)
+	'store' operation (segmentation.cpp:321->segmentation.cpp:605) of variable 'max', segmentation.cpp:321->segmentation.cpp:605 on local variable 'max' [69]  (1.66 ns)
+
+ <State 18>: 5.64ns
+The critical path consists of the following:
+	'fmul' operation ('thresholdValue', segmentation.cpp:608) [75]  (5.64 ns)
+
+ <State 19>: 5.64ns
+The critical path consists of the following:
+	'fmul' operation ('thresholdValue', segmentation.cpp:608) [75]  (5.64 ns)
+
+ <State 20>: 8.05ns
+The critical path consists of the following:
+	'fmul' operation ('thresholdValue', segmentation.cpp:608) [75]  (5.64 ns)
+	'icmp' operation ('notrhs4', segmentation.cpp:338->segmentation.cpp:608) [78]  (2.41 ns)
+
+ <State 21>: 2.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', segmentation.cpp:335->segmentation.cpp:608) [81]  (0 ns)
+	'add' operation ('i', segmentation.cpp:335->segmentation.cpp:608) [84]  (2.12 ns)
+
+ <State 22>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:336->segmentation.cpp:608) [91]  (0 ns)
+	'add' operation ('tmp_66', segmentation.cpp:337->segmentation.cpp:608) [98]  (2.25 ns)
+	'getelementptr' operation ('distanceTransformOut_2', segmentation.cpp:337->segmentation.cpp:608) [100]  (0 ns)
+	'load' operation ('x', segmentation.cpp:337->segmentation.cpp:608) on array 'distanceTransformOut' [102]  (3.26 ns)
+
+ <State 23>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('x', segmentation.cpp:337->segmentation.cpp:608) on array 'distanceTransformOut' [102]  (3.26 ns)
+
+ <State 24>: 7.57ns
+The critical path consists of the following:
+	'add' operation ('sh', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:339->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608) [109]  (2.12 ns)
+	'select' operation ('sh', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608) [113]  (1.37 ns)
+	'lshr' operation ('r.V', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608) [117]  (0 ns)
+	'select' operation ('val.V', /wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:70->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116->/wrk/2018.3/continuous/2018_12_06_2405991/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:62->segmentation.cpp:337->segmentation.cpp:608) [122]  (4.09 ns)
+
+ <State 25>: 8.1ns
+The critical path consists of the following:
+	'sitofp' operation ('tmp_54_i', segmentation.cpp:338->segmentation.cpp:608) [124]  (8.1 ns)
+
+ <State 26>: 8.1ns
+The critical path consists of the following:
+	'sitofp' operation ('tmp_54_i', segmentation.cpp:338->segmentation.cpp:608) [124]  (8.1 ns)
+
+ <State 27>: 8.1ns
+The critical path consists of the following:
+	'sitofp' operation ('tmp_54_i', segmentation.cpp:338->segmentation.cpp:608) [124]  (8.1 ns)
+
+ <State 28>: 8.1ns
+The critical path consists of the following:
+	'sitofp' operation ('tmp_54_i', segmentation.cpp:338->segmentation.cpp:608) [124]  (8.1 ns)
+
+ <State 29>: 8.1ns
+The critical path consists of the following:
+	'sitofp' operation ('tmp_54_i', segmentation.cpp:338->segmentation.cpp:608) [124]  (8.1 ns)
+
+ <State 30>: 7.56ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_45', segmentation.cpp:338->segmentation.cpp:608) [135]  (6.62 ns)
+	'and' operation ('tmp_46', segmentation.cpp:338->segmentation.cpp:608) [136]  (0.942 ns)
+
+ <State 31>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('sureForeground_addr', segmentation.cpp:339->segmentation.cpp:608) [101]  (0 ns)
+	'store' operation (segmentation.cpp:339->segmentation.cpp:608) of variable 'tmp_46', segmentation.cpp:338->segmentation.cpp:608 on array 'sureForeground' [137]  (3.26 ns)
+
+ <State 32>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', segmentation.cpp:549->segmentation.cpp:624) [146]  (1.66 ns)
+
+ <State 33>: 2.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', segmentation.cpp:549->segmentation.cpp:624) [146]  (0 ns)
+	'add' operation ('i', segmentation.cpp:549->segmentation.cpp:624) [149]  (2.12 ns)
+
+ <State 34>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:550->segmentation.cpp:624) [156]  (0 ns)
+	'add' operation ('tmp_71', segmentation.cpp:551->segmentation.cpp:624) [163]  (2.25 ns)
+	'getelementptr' operation ('input_image_r_addr', segmentation.cpp:551->segmentation.cpp:624) [165]  (0 ns)
+	'load' operation ('input_image_r_load', segmentation.cpp:551->segmentation.cpp:624) on array 'input_image_r' [171]  (3.26 ns)
+
+ <State 35>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('input_image_r_load', segmentation.cpp:551->segmentation.cpp:624) on array 'input_image_r' [171]  (3.26 ns)
+	'store' operation (segmentation.cpp:551->segmentation.cpp:624) of variable 'input_image_r_load', segmentation.cpp:551->segmentation.cpp:624 on array 'output_image_r' [172]  (3.26 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

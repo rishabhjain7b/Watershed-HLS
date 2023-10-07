@@ -1,0 +1,51 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'image_segmentation'" level="0">
+<item name = "Date">Sun Apr 23 06:25:47 2023
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">watershed</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">aartix7</item>
+<item name = "Target device">xa7a12tcsg325-1q</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.606, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">1049600, 1049600, 2050, -, -, 512, no</column>
+<column name=" + Loop 1.1">2048, 2048, 4, -, -, 512, no</column>
+<column name="- Loop 2">2622464, 2622464, 5122, -, -, 512, no</column>
+<column name=" + Loop 2.1">5120, 5120, 10, -, -, 512, no</column>
+<column name="- Loop 3">525312, 525312, 1026, -, -, 512, no</column>
+<column name=" + Loop 3.1">1024, 1024, 2, -, -, 512, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

@@ -1,0 +1,501 @@
+
+
+================================================================
+== Vivado HLS Report for 'watershed_algorithm'
+================================================================
+* Date:           Sun Apr 23 06:25:46 2023
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        watershed
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.244|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |             |     Latency     | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min  |   max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  525312|  525312|      1026|          -|          -|   512|    no    |
+        | + Loop 1.1  |    1024|    1024|         2|          -|          -|   512|    no    |
+        |- Loop 2     |  787456|  787456|      1538|          -|          -|   512|    no    |
+        | + Loop 2.1  |    1536|    1536|         3|          -|          -|   512|    no    |
+        |- Loop 3     |       ?|       ?|  37 ~ 69 |          -|          -|     ?|    no    |
+        | + Loop 3.1  |      32|      64|   4 ~ 8  |          -|          -|     8|    no    |
+        +-------------+--------+--------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 20
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond4)
+	5  / (exitcond4)
+3 --> 
+	4  / (!exitcond3)
+	2  / (exitcond3)
+4 --> 
+	3  / true
+5 --> 
+	6  / (!exitcond2)
+	9  / (exitcond2)
+6 --> 
+	7  / (!exitcond1)
+	5  / (exitcond1)
+7 --> 
+	8  / true
+8 --> 
+	6  / true
+9 --> 
+	10  / (tmp_5)
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / (!exitcond)
+	9  / (exitcond)
+14 --> 
+	15  / true
+15 --> 
+	16  / (or_cond6)
+	20  / (!or_cond6)
+16 --> 
+	17  / (tmp_23)
+	20  / (!tmp_23)
+17 --> 
+	18  / (tmp_24)
+	20  / (!tmp_24)
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	13  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.66>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%queue_end = alloca i32"   --->   Operation 21 'alloca' 'queue_end' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%queue_0 = alloca [262144 x i32], align 16" [segmentation.cpp:480]   --->   Operation 22 'alloca' 'queue_0' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%queue_1 = alloca [262144 x i32], align 16" [segmentation.cpp:480]   --->   Operation 23 'alloca' 'queue_1' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%dist = alloca [262144 x i32], align 4" [segmentation.cpp:494]   --->   Operation 24 'alloca' 'dist' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_1 : Operation 25 [1/1] (1.66ns)   --->   "store i32 0, i32* %queue_end"   --->   Operation 25 'store' <Predicate = true> <Delay = 1.66>
+ST_1 : Operation 26 [1/1] (1.66ns)   --->   "br label %.loopexit" [segmentation.cpp:483]   --->   Operation 26 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 2.12>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%i = phi i10 [ 0, %0 ], [ %i_1, %.loopexit.loopexit ]"   --->   Operation 27 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%queue_end_load = load i32* %queue_end"   --->   Operation 28 'load' 'queue_end_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%i_cast7 = zext i10 %i to i32" [segmentation.cpp:483]   --->   Operation 29 'zext' 'i_cast7' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (1.70ns)   --->   "%exitcond4 = icmp eq i10 %i, -512" [segmentation.cpp:483]   --->   Operation 30 'icmp' 'exitcond4' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 31 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (2.12ns)   --->   "%i_1 = add i10 %i, 1" [segmentation.cpp:483]   --->   Operation 32 'add' 'i_1' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %.preheader8.preheader, label %.preheader9.preheader" [segmentation.cpp:483]   --->   Operation 33 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%tmp = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i, i9 0)" [segmentation.cpp:483]   --->   Operation 34 'bitconcatenate' 'tmp' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i19 %tmp to i20" [segmentation.cpp:484]   --->   Operation 35 'zext' 'tmp_1_cast' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (1.66ns)   --->   "br label %.preheader9" [segmentation.cpp:484]   --->   Operation 36 'br' <Predicate = (!exitcond4)> <Delay = 1.66>
+ST_2 : Operation 37 [1/1] (1.66ns)   --->   "br label %.preheader8" [segmentation.cpp:495]   --->   Operation 37 'br' <Predicate = (exitcond4)> <Delay = 1.66>
+
+State 3 <SV = 2> <Delay = 5.50>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%j = phi i10 [ 0, %.preheader9.preheader ], [ %j_1, %.preheader9.backedge ]"   --->   Operation 38 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%j_cast6 = zext i10 %j to i32" [segmentation.cpp:484]   --->   Operation 39 'zext' 'j_cast6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (1.70ns)   --->   "%exitcond3 = icmp eq i10 %j, -512" [segmentation.cpp:484]   --->   Operation 40 'icmp' 'exitcond3' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 41 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (2.12ns)   --->   "%j_1 = add i10 %j, 1" [segmentation.cpp:484]   --->   Operation 42 'add' 'j_1' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.loopexit.loopexit, label %1" [segmentation.cpp:484]   --->   Operation 43 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_3_cast = zext i10 %j to i20" [segmentation.cpp:485]   --->   Operation 44 'zext' 'tmp_3_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (2.25ns)   --->   "%tmp_s = add i20 %tmp_1_cast, %tmp_3_cast" [segmentation.cpp:485]   --->   Operation 45 'add' 'tmp_s' <Predicate = (!exitcond3)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_28_cast = zext i20 %tmp_s to i64" [segmentation.cpp:485]   --->   Operation 46 'zext' 'tmp_28_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%watershedOutput_addr = getelementptr [262144 x i8]* @watershedOutput, i64 0, i64 %tmp_28_cast" [segmentation.cpp:485]   --->   Operation 47 'getelementptr' 'watershedOutput_addr' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 48 [2/2] (3.25ns)   --->   "%watershedOutput_load = load i8* %watershedOutput_addr, align 1" [segmentation.cpp:485]   --->   Operation 48 'load' 'watershedOutput_load' <Predicate = (!exitcond3)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 49 'br' <Predicate = (exitcond3)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.73>
+ST_4 : Operation 50 [1/2] (3.25ns)   --->   "%watershedOutput_load = load i8* %watershedOutput_addr, align 1" [segmentation.cpp:485]   --->   Operation 50 'load' 'watershedOutput_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_4 : Operation 51 [1/1] (1.47ns)   --->   "%tmp_4 = icmp eq i8 %watershedOutput_load, 1" [segmentation.cpp:485]   --->   Operation 51 'icmp' 'tmp_4' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "br i1 %tmp_4, label %2, label %.preheader9.backedge" [segmentation.cpp:485]   --->   Operation 52 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%queue_end_load_1 = load i32* %queue_end" [segmentation.cpp:488]   --->   Operation 53 'load' 'queue_end_load_1' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_6 = sext i32 %queue_end_load_1 to i64" [segmentation.cpp:486]   --->   Operation 54 'sext' 'tmp_6' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%queue_0_addr_1 = getelementptr [262144 x i32]* %queue_0, i64 0, i64 %tmp_6" [segmentation.cpp:486]   --->   Operation 55 'getelementptr' 'queue_0_addr_1' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (3.25ns)   --->   "store i32 %i_cast7, i32* %queue_0_addr_1, align 8" [segmentation.cpp:486]   --->   Operation 56 'store' <Predicate = (tmp_4)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%queue_1_addr_1 = getelementptr [262144 x i32]* %queue_1, i64 0, i64 %tmp_6" [segmentation.cpp:487]   --->   Operation 57 'getelementptr' 'queue_1_addr_1' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (3.25ns)   --->   "store i32 %j_cast6, i32* %queue_1_addr_1, align 4" [segmentation.cpp:487]   --->   Operation 58 'store' <Predicate = (tmp_4)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_4 : Operation 59 [1/1] (2.70ns)   --->   "%queue_end_2 = add nsw i32 %queue_end_load_1, 1" [segmentation.cpp:488]   --->   Operation 59 'add' 'queue_end_2' <Predicate = (tmp_4)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 60 [1/1] (1.66ns)   --->   "store i32 %queue_end_2, i32* %queue_end" [segmentation.cpp:488]   --->   Operation 60 'store' <Predicate = (tmp_4)> <Delay = 1.66>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "br label %.preheader9.backedge" [segmentation.cpp:489]   --->   Operation 61 'br' <Predicate = (tmp_4)> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "br label %.preheader9"   --->   Operation 62 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 2.12>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%i1 = phi i10 [ %i_3, %.preheader8.loopexit ], [ 0, %.preheader8.preheader ]"   --->   Operation 63 'phi' 'i1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (1.70ns)   --->   "%exitcond2 = icmp eq i10 %i1, -512" [segmentation.cpp:495]   --->   Operation 64 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 65 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (2.12ns)   --->   "%i_3 = add i10 %i1, 1" [segmentation.cpp:495]   --->   Operation 66 'add' 'i_3' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %.preheader.preheader, label %.preheader7.preheader" [segmentation.cpp:495]   --->   Operation 67 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_2 = call i19 @_ssdm_op_BitConcatenate.i19.i10.i9(i10 %i1, i9 0)" [segmentation.cpp:495]   --->   Operation 68 'bitconcatenate' 'tmp_2' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_20_cast = zext i19 %tmp_2 to i20" [segmentation.cpp:496]   --->   Operation 69 'zext' 'tmp_20_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (1.66ns)   --->   "br label %.preheader7" [segmentation.cpp:496]   --->   Operation 70 'br' <Predicate = (!exitcond2)> <Delay = 1.66>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%queue_end_1 = alloca i32"   --->   Operation 71 'alloca' 'queue_end_1' <Predicate = (exitcond2)> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (1.66ns)   --->   "store i32 %queue_end_load, i32* %queue_end_1"   --->   Operation 72 'store' <Predicate = (exitcond2)> <Delay = 1.66>
+ST_5 : Operation 73 [1/1] (1.66ns)   --->   "br label %.preheader" [segmentation.cpp:506]   --->   Operation 73 'br' <Predicate = (exitcond2)> <Delay = 1.66>
+
+State 6 <SV = 3> <Delay = 5.50>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%j2 = phi i10 [ %j_3, %3 ], [ 0, %.preheader7.preheader ]"   --->   Operation 74 'phi' 'j2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (1.70ns)   --->   "%exitcond1 = icmp eq i10 %j2, -512" [segmentation.cpp:496]   --->   Operation 75 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.70> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512)"   --->   Operation 76 'speclooptripcount' 'empty_17' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 77 [1/1] (2.12ns)   --->   "%j_3 = add i10 %j2, 1" [segmentation.cpp:496]   --->   Operation 77 'add' 'j_3' <Predicate = true> <Delay = 2.12> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 78 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader8.loopexit, label %3" [segmentation.cpp:496]   --->   Operation 78 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_7_cast = zext i10 %j2 to i20" [segmentation.cpp:497]   --->   Operation 79 'zext' 'tmp_7_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_6 : Operation 80 [1/1] (2.25ns)   --->   "%tmp_12 = add i20 %tmp_20_cast, %tmp_7_cast" [segmentation.cpp:497]   --->   Operation 80 'add' 'tmp_12' <Predicate = (!exitcond1)> <Delay = 2.25> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 81 [1/1] (0.00ns)   --->   "%tmp_32_cast = zext i20 %tmp_12 to i64" [segmentation.cpp:497]   --->   Operation 81 'zext' 'tmp_32_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_6 : Operation 82 [1/1] (0.00ns)   --->   "%watershedOutput_addr_2 = getelementptr [262144 x i8]* @watershedOutput, i64 0, i64 %tmp_32_cast" [segmentation.cpp:497]   --->   Operation 82 'getelementptr' 'watershedOutput_addr_2' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_6 : Operation 83 [2/2] (3.25ns)   --->   "%watershedOutput_load_1 = load i8* %watershedOutput_addr_2, align 1" [segmentation.cpp:497]   --->   Operation 83 'load' 'watershedOutput_load_1' <Predicate = (!exitcond1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "br label %.preheader8"   --->   Operation 84 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 4.73>
+ST_7 : Operation 85 [1/2] (3.25ns)   --->   "%watershedOutput_load_1 = load i8* %watershedOutput_addr_2, align 1" [segmentation.cpp:497]   --->   Operation 85 'load' 'watershedOutput_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_7 : Operation 86 [1/1] (1.47ns)   --->   "%tmp_8 = icmp eq i8 %watershedOutput_load_1, 1" [segmentation.cpp:497]   --->   Operation 86 'icmp' 'tmp_8' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 5> <Delay = 4.62>
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "%dist_addr_1 = getelementptr [262144 x i32]* %dist, i64 0, i64 %tmp_32_cast" [segmentation.cpp:498]   --->   Operation 87 'getelementptr' 'dist_addr_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 88 [1/1] (1.37ns)   --->   "%storemerge1_cast_cas = select i1 %tmp_8, i32 0, i32 262145" [segmentation.cpp:497]   --->   Operation 88 'select' 'storemerge1_cast_cas' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 89 [1/1] (3.25ns)   --->   "store i32 %storemerge1_cast_cas, i32* %dist_addr_1, align 4" [segmentation.cpp:498]   --->   Operation 89 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "br label %.preheader7" [segmentation.cpp:496]   --->   Operation 90 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 3> <Delay = 3.25>
+ST_9 : Operation 91 [1/1] (0.00ns)   --->   "%queue_start = phi i32 [ %queue_start_1, %_ifconv1 ], [ 0, %.preheader.preheader ]"   --->   Operation 91 'phi' 'queue_start' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 92 [1/1] (0.00ns)   --->   "%num_labels = phi i32 [ %num_labels_2, %_ifconv1 ], [ 0, %.preheader.preheader ]"   --->   Operation 92 'phi' 'num_labels' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 93 [1/1] (0.00ns)   --->   "%queue_end_1_load = load i32* %queue_end_1"   --->   Operation 93 'load' 'queue_end_1_load' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 94 [1/1] (2.43ns)   --->   "%tmp_5 = icmp slt i32 %queue_start, %queue_end_1_load" [segmentation.cpp:506]   --->   Operation 94 'icmp' 'tmp_5' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 95 [1/1] (2.70ns)   --->   "%queue_start_1 = add nsw i32 %queue_start, 1" [segmentation.cpp:510]   --->   Operation 95 'add' 'queue_start_1' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 96 [1/1] (0.00ns)   --->   "br i1 %tmp_5, label %4, label %9" [segmentation.cpp:506]   --->   Operation 96 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_9 = sext i32 %queue_start to i64" [segmentation.cpp:508]   --->   Operation 97 'sext' 'tmp_9' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_9 : Operation 98 [1/1] (0.00ns)   --->   "%queue_0_addr = getelementptr [262144 x i32]* %queue_0, i64 0, i64 %tmp_9" [segmentation.cpp:508]   --->   Operation 98 'getelementptr' 'queue_0_addr' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_9 : Operation 99 [2/2] (3.25ns)   --->   "%i_4 = load i32* %queue_0_addr, align 8" [segmentation.cpp:508]   --->   Operation 99 'load' 'i_4' <Predicate = (tmp_5)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_9 : Operation 100 [1/1] (0.00ns)   --->   "%queue_1_addr = getelementptr [262144 x i32]* %queue_1, i64 0, i64 %tmp_9" [segmentation.cpp:509]   --->   Operation 100 'getelementptr' 'queue_1_addr' <Predicate = (tmp_5)> <Delay = 0.00>
+ST_9 : Operation 101 [2/2] (3.25ns)   --->   "%j_2 = load i32* %queue_1_addr, align 4" [segmentation.cpp:509]   --->   Operation 101 'load' 'j_2' <Predicate = (tmp_5)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_9 : Operation 102 [1/1] (0.00ns)   --->   "ret void" [segmentation.cpp:540]   --->   Operation 102 'ret' <Predicate = (!tmp_5)> <Delay = 0.00>
+
+State 10 <SV = 4> <Delay = 5.54>
+ST_10 : Operation 103 [1/2] (3.25ns)   --->   "%i_4 = load i32* %queue_0_addr, align 8" [segmentation.cpp:508]   --->   Operation 103 'load' 'i_4' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_10 : Operation 104 [1/2] (3.25ns)   --->   "%j_2 = load i32* %queue_1_addr, align 4" [segmentation.cpp:509]   --->   Operation 104 'load' 'j_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_10 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_1 = trunc i32 %j_2 to i20" [segmentation.cpp:509]   --->   Operation 105 'trunc' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_3 = trunc i32 %i_4 to i11" [segmentation.cpp:508]   --->   Operation 106 'trunc' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 107 [1/1] (0.00ns)   --->   "%tmp_30_cast = call i20 @_ssdm_op_BitConcatenate.i20.i11.i9(i11 %tmp_3, i9 0)" [segmentation.cpp:521]   --->   Operation 107 'bitconcatenate' 'tmp_30_cast' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 108 [1/1] (2.28ns)   --->   "%tmp_7 = add i20 %tmp_30_cast, %tmp_1" [segmentation.cpp:521]   --->   Operation 108 'add' 'tmp_7' <Predicate = true> <Delay = 2.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 5> <Delay = 3.25>
+ST_11 : Operation 109 [1/1] (0.00ns)   --->   "%tmp_31_cast = sext i20 %tmp_7 to i64" [segmentation.cpp:521]   --->   Operation 109 'sext' 'tmp_31_cast' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 110 [1/1] (0.00ns)   --->   "%grayOutput_addr = getelementptr [262144 x i8]* @grayOutput, i64 0, i64 %tmp_31_cast" [segmentation.cpp:521]   --->   Operation 110 'getelementptr' 'grayOutput_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 111 [1/1] (0.00ns)   --->   "%watershedOutput_addr_1 = getelementptr [262144 x i8]* @watershedOutput, i64 0, i64 %tmp_31_cast" [segmentation.cpp:523]   --->   Operation 111 'getelementptr' 'watershedOutput_addr_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 112 [1/1] (0.00ns)   --->   "%dist_addr = getelementptr [262144 x i32]* %dist, i64 0, i64 %tmp_31_cast" [segmentation.cpp:521]   --->   Operation 112 'getelementptr' 'dist_addr' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 113 [2/2] (3.25ns)   --->   "%grayOutput_load_1 = load i8* %grayOutput_addr, align 1" [segmentation.cpp:521]   --->   Operation 113 'load' 'grayOutput_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+
+State 12 <SV = 6> <Delay = 3.25>
+ST_12 : Operation 114 [1/2] (3.25ns)   --->   "%grayOutput_load_1 = load i8* %grayOutput_addr, align 1" [segmentation.cpp:521]   --->   Operation 114 'load' 'grayOutput_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_12 : Operation 115 [1/1] (1.66ns)   --->   "br label %._crit_edge10" [segmentation.cpp:514]   --->   Operation 115 'br' <Predicate = true> <Delay = 1.66>
+
+State 13 <SV = 7> <Delay = 7.06>
+ST_13 : Operation 116 [1/1] (0.00ns)   --->   "%min_label = phi i32 [ 262145, %4 ], [ %min_label_be, %._crit_edge10.backedge ]" [segmentation.cpp:518]   --->   Operation 116 'phi' 'min_label' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 117 [1/1] (0.00ns)   --->   "%k = phi i4 [ 0, %4 ], [ %k_1, %._crit_edge10.backedge ]"   --->   Operation 117 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 118 [1/1] (1.44ns)   --->   "%exitcond = icmp eq i4 %k, -8" [segmentation.cpp:514]   --->   Operation 118 'icmp' 'exitcond' <Predicate = true> <Delay = 1.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 119 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 119 'speclooptripcount' 'empty_18' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 120 [1/1] (1.77ns)   --->   "%k_1 = add i4 %k, 1" [segmentation.cpp:514]   --->   Operation 120 'add' 'k_1' <Predicate = true> <Delay = 1.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 121 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %_ifconv1, label %5" [segmentation.cpp:514]   --->   Operation 121 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_11 = zext i4 %k to i64" [segmentation.cpp:515]   --->   Operation 122 'zext' 'tmp_11' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_13 : Operation 123 [1/1] (0.00ns)   --->   "%neighbours_0_addr = getelementptr [8 x i2]* @neighbours_0, i64 0, i64 %tmp_11" [segmentation.cpp:515]   --->   Operation 123 'getelementptr' 'neighbours_0_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_13 : Operation 124 [2/2] (3.25ns)   --->   "%neighbours_0_load = load i2* %neighbours_0_addr, align 1" [segmentation.cpp:515]   --->   Operation 124 'load' 'neighbours_0_load' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 8> <ROM>
+ST_13 : Operation 125 [1/1] (0.00ns)   --->   "%neighbours_1_addr = getelementptr [8 x i2]* @neighbours_1, i64 0, i64 %tmp_11" [segmentation.cpp:516]   --->   Operation 125 'getelementptr' 'neighbours_1_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_13 : Operation 126 [2/2] (3.25ns)   --->   "%neighbours_1_load = load i2* %neighbours_1_addr, align 1" [segmentation.cpp:516]   --->   Operation 126 'load' 'neighbours_1_load' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 8> <ROM>
+ST_13 : Operation 127 [1/1] (2.43ns)   --->   "%tmp_10 = icmp slt i32 %min_label, 262145" [segmentation.cpp:533]   --->   Operation 127 'icmp' 'tmp_10' <Predicate = (exitcond)> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_13 = trunc i32 %min_label to i8" [segmentation.cpp:534]   --->   Operation 128 'trunc' 'tmp_13' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 129 [1/1] (2.70ns)   --->   "%num_labels_1 = add nsw i32 1, %num_labels" [segmentation.cpp:536]   --->   Operation 129 'add' 'num_labels_1' <Predicate = (exitcond)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_14 = trunc i32 %num_labels to i8" [segmentation.cpp:537]   --->   Operation 130 'trunc' 'tmp_14' <Predicate = (exitcond)> <Delay = 0.00>
+ST_13 : Operation 131 [1/1] (2.11ns)   --->   "%tmp_15 = add i8 2, %tmp_14" [segmentation.cpp:537]   --->   Operation 131 'add' 'tmp_15' <Predicate = (exitcond)> <Delay = 2.11> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 132 [1/1] (1.37ns)   --->   "%storemerge = select i1 %tmp_10, i8 %tmp_13, i8 %tmp_15" [segmentation.cpp:537]   --->   Operation 132 'select' 'storemerge' <Predicate = (exitcond)> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 133 [1/1] (1.37ns)   --->   "%num_labels_2 = select i1 %tmp_10, i32 %num_labels, i32 %num_labels_1" [segmentation.cpp:536]   --->   Operation 133 'select' 'num_labels_2' <Predicate = (exitcond)> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_13 : Operation 134 [1/1] (3.25ns)   --->   "store i8 %storemerge, i8* %watershedOutput_addr_1, align 1" [segmentation.cpp:534]   --->   Operation 134 'store' <Predicate = (exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_13 : Operation 135 [1/1] (0.00ns)   --->   "br label %.preheader"   --->   Operation 135 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 14 <SV = 8> <Delay = 3.25>
+ST_14 : Operation 136 [1/2] (3.25ns)   --->   "%neighbours_0_load = load i2* %neighbours_0_addr, align 1" [segmentation.cpp:515]   --->   Operation 136 'load' 'neighbours_0_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 8> <ROM>
+ST_14 : Operation 137 [1/2] (3.25ns)   --->   "%neighbours_1_load = load i2* %neighbours_1_addr, align 1" [segmentation.cpp:516]   --->   Operation 137 'load' 'neighbours_1_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 2> <Depth = 8> <ROM>
+
+State 15 <SV = 9> <Delay = 8.24>
+ST_15 : Operation 138 [1/1] (0.00ns)   --->   "%neighbours_0_load_ca = sext i2 %neighbours_0_load to i32" [segmentation.cpp:515]   --->   Operation 138 'sext' 'neighbours_0_load_ca' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 139 [1/1] (2.70ns)   --->   "%ni = add nsw i32 %i_4, %neighbours_0_load_ca" [segmentation.cpp:515]   --->   Operation 139 'add' 'ni' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 140 [1/1] (0.00ns)   --->   "%neighbours_1_load_ca = sext i2 %neighbours_1_load to i32" [segmentation.cpp:516]   --->   Operation 140 'sext' 'neighbours_1_load_ca' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 141 [1/1] (2.70ns)   --->   "%nj = add nsw i32 %j_2, %neighbours_1_load_ca" [segmentation.cpp:516]   --->   Operation 141 'add' 'nj' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 142 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%tmp_16 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %ni, i32 31)" [segmentation.cpp:517]   --->   Operation 142 'bitselect' 'tmp_16' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 143 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%rev = xor i1 %tmp_16, true" [segmentation.cpp:517]   --->   Operation 143 'xor' 'rev' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 144 [1/1] (0.00ns)   --->   "%tmp_17 = call i23 @_ssdm_op_PartSelect.i23.i32.i32.i32(i32 %ni, i32 9, i32 31)" [segmentation.cpp:517]   --->   Operation 144 'partselect' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 145 [1/1] (2.40ns)   --->   "%icmp = icmp slt i23 %tmp_17, 1" [segmentation.cpp:517]   --->   Operation 145 'icmp' 'icmp' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 146 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%tmp_18 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %nj, i32 31)" [segmentation.cpp:517]   --->   Operation 146 'bitselect' 'tmp_18' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%rev4 = xor i1 %tmp_18, true" [segmentation.cpp:517]   --->   Operation 147 'xor' 'rev4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 148 [1/1] (0.00ns)   --->   "%tmp_19 = call i23 @_ssdm_op_PartSelect.i23.i32.i32.i32(i32 %nj, i32 9, i32 31)" [segmentation.cpp:517]   --->   Operation 148 'partselect' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 149 [1/1] (2.40ns)   --->   "%icmp7 = icmp slt i23 %tmp_19, 1" [segmentation.cpp:517]   --->   Operation 149 'icmp' 'icmp7' <Predicate = true> <Delay = 2.40> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 150 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%tmp1 = and i1 %icmp, %rev" [segmentation.cpp:517]   --->   Operation 150 'and' 'tmp1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 151 [1/1] (0.00ns) (grouped into LUT with out node or_cond6)   --->   "%tmp2 = and i1 %icmp7, %rev4" [segmentation.cpp:517]   --->   Operation 151 'and' 'tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 152 [1/1] (0.94ns) (out node of the LUT)   --->   "%or_cond6 = and i1 %tmp2, %tmp1" [segmentation.cpp:517]   --->   Operation 152 'and' 'or_cond6' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 153 [1/1] (1.66ns)   --->   "br i1 %or_cond6, label %_ifconv, label %._crit_edge10.backedge" [segmentation.cpp:517]   --->   Operation 153 'br' <Predicate = true> <Delay = 1.66>
+ST_15 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_20 = trunc i32 %nj to i20" [segmentation.cpp:516]   --->   Operation 154 'trunc' 'tmp_20' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 155 [1/1] (0.00ns)   --->   "%tmp_21 = trunc i32 %ni to i11" [segmentation.cpp:515]   --->   Operation 155 'trunc' 'tmp_21' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_34_cast = call i20 @_ssdm_op_BitConcatenate.i20.i11.i9(i11 %tmp_21, i9 0)" [segmentation.cpp:521]   --->   Operation 156 'bitconcatenate' 'tmp_34_cast' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 157 [1/1] (2.28ns)   --->   "%tmp_28 = add i20 %tmp_34_cast, %tmp_20" [segmentation.cpp:521]   --->   Operation 157 'add' 'tmp_28' <Predicate = (or_cond6)> <Delay = 2.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 158 [1/1] (0.00ns)   --->   "%tmp_35_cast = zext i20 %tmp_28 to i64" [segmentation.cpp:521]   --->   Operation 158 'zext' 'tmp_35_cast' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 159 [1/1] (0.00ns)   --->   "%grayOutput_addr_1 = getelementptr [262144 x i8]* @grayOutput, i64 0, i64 %tmp_35_cast" [segmentation.cpp:521]   --->   Operation 159 'getelementptr' 'grayOutput_addr_1' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 160 [1/1] (0.00ns)   --->   "%watershedOutput_addr_3 = getelementptr [262144 x i8]* @watershedOutput, i64 0, i64 %tmp_35_cast" [segmentation.cpp:518]   --->   Operation 160 'getelementptr' 'watershedOutput_addr_3' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 161 [1/1] (0.00ns)   --->   "%dist_addr_2 = getelementptr [262144 x i32]* %dist, i64 0, i64 %tmp_35_cast" [segmentation.cpp:521]   --->   Operation 161 'getelementptr' 'dist_addr_2' <Predicate = (or_cond6)> <Delay = 0.00>
+ST_15 : Operation 162 [2/2] (3.25ns)   --->   "%watershedOutput_load_2 = load i8* %watershedOutput_addr_3, align 1" [segmentation.cpp:518]   --->   Operation 162 'load' 'watershedOutput_load_2' <Predicate = (or_cond6)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+
+State 16 <SV = 10> <Delay = 7.06>
+ST_16 : Operation 163 [1/2] (3.25ns)   --->   "%watershedOutput_load_2 = load i8* %watershedOutput_addr_3, align 1" [segmentation.cpp:518]   --->   Operation 163 'load' 'watershedOutput_load_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_16 : Operation 164 [1/1] (0.00ns)   --->   "%tmp_29 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %watershedOutput_load_2, i32 1, i32 7)" [segmentation.cpp:518]   --->   Operation 164 'partselect' 'tmp_29' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 165 [1/1] (1.46ns)   --->   "%icmp1 = icmp ne i7 %tmp_29, 0" [segmentation.cpp:518]   --->   Operation 165 'icmp' 'icmp1' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 166 [1/1] (0.00ns)   --->   "%min_label_2 = zext i8 %watershedOutput_load_2 to i32" [segmentation.cpp:518]   --->   Operation 166 'zext' 'min_label_2' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 167 [1/1] (2.43ns)   --->   "%tmp_22 = icmp slt i32 %min_label_2, %min_label" [segmentation.cpp:518]   --->   Operation 167 'icmp' 'tmp_22' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 168 [1/1] (0.00ns) (grouped into LUT with out node min_label_1)   --->   "%min_label_3_min_labe = select i1 %tmp_22, i32 %min_label_2, i32 %min_label" [segmentation.cpp:518]   --->   Operation 168 'select' 'min_label_3_min_labe' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 169 [1/1] (1.37ns) (out node of the LUT)   --->   "%min_label_1 = select i1 %icmp1, i32 %min_label_3_min_labe, i32 %min_label" [segmentation.cpp:518]   --->   Operation 169 'select' 'min_label_1' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_16 : Operation 170 [1/1] (1.47ns)   --->   "%tmp_23 = icmp eq i8 %watershedOutput_load_2, 1" [segmentation.cpp:521]   --->   Operation 170 'icmp' 'tmp_23' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 171 [1/1] (1.66ns)   --->   "br i1 %tmp_23, label %6, label %._crit_edge10.backedge" [segmentation.cpp:521]   --->   Operation 171 'br' <Predicate = true> <Delay = 1.66>
+ST_16 : Operation 172 [2/2] (3.25ns)   --->   "%grayOutput_load = load i8* %grayOutput_addr_1, align 1" [segmentation.cpp:521]   --->   Operation 172 'load' 'grayOutput_load' <Predicate = (tmp_23)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+
+State 17 <SV = 11> <Delay = 6.39>
+ST_17 : Operation 173 [1/2] (3.25ns)   --->   "%grayOutput_load = load i8* %grayOutput_addr_1, align 1" [segmentation.cpp:521]   --->   Operation 173 'load' 'grayOutput_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_17 : Operation 174 [1/1] (1.47ns)   --->   "%tmp_24 = icmp eq i8 %grayOutput_load, %grayOutput_load_1" [segmentation.cpp:521]   --->   Operation 174 'icmp' 'tmp_24' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 175 [1/1] (1.66ns)   --->   "br i1 %tmp_24, label %7, label %._crit_edge10.backedge" [segmentation.cpp:521]   --->   Operation 175 'br' <Predicate = true> <Delay = 1.66>
+ST_17 : Operation 176 [2/2] (3.25ns)   --->   "%dist_load_1 = load i32* %dist_addr, align 4" [segmentation.cpp:521]   --->   Operation 176 'load' 'dist_load_1' <Predicate = (tmp_24)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+
+State 18 <SV = 12> <Delay = 3.25>
+ST_18 : Operation 177 [2/2] (3.25ns)   --->   "%dist_load = load i32* %dist_addr_2, align 4" [segmentation.cpp:521]   --->   Operation 177 'load' 'dist_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_18 : Operation 178 [1/2] (3.25ns)   --->   "%dist_load_1 = load i32* %dist_addr, align 4" [segmentation.cpp:521]   --->   Operation 178 'load' 'dist_load_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+
+State 19 <SV = 13> <Delay = 7.35>
+ST_19 : Operation 179 [1/2] (3.25ns)   --->   "%dist_load = load i32* %dist_addr_2, align 4" [segmentation.cpp:521]   --->   Operation 179 'load' 'dist_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_19 : Operation 180 [1/1] (2.70ns)   --->   "%tmp_25 = add nsw i32 %dist_load_1, 1" [segmentation.cpp:521]   --->   Operation 180 'add' 'tmp_25' <Predicate = true> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 181 [1/1] (2.43ns)   --->   "%tmp_26 = icmp sgt i32 %dist_load, %tmp_25" [segmentation.cpp:521]   --->   Operation 181 'icmp' 'tmp_26' <Predicate = true> <Delay = 2.43> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 182 [1/1] (1.66ns)   --->   "br i1 %tmp_26, label %8, label %._crit_edge10.backedge" [segmentation.cpp:521]   --->   Operation 182 'br' <Predicate = true> <Delay = 1.66>
+ST_19 : Operation 183 [1/1] (0.00ns)   --->   "%queue_end_1_load_1 = load i32* %queue_end_1" [segmentation.cpp:527]   --->   Operation 183 'load' 'queue_end_1_load_1' <Predicate = (tmp_26)> <Delay = 0.00>
+ST_19 : Operation 184 [2/2] (3.25ns)   --->   "%watershedOutput_load_3 = load i8* %watershedOutput_addr_1, align 1" [segmentation.cpp:523]   --->   Operation 184 'load' 'watershedOutput_load_3' <Predicate = (tmp_26)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_19 : Operation 185 [1/1] (3.25ns)   --->   "store i32 %tmp_25, i32* %dist_addr_2, align 4" [segmentation.cpp:524]   --->   Operation 185 'store' <Predicate = (tmp_26)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_19 : Operation 186 [1/1] (0.00ns)   --->   "%tmp_27 = sext i32 %queue_end_1_load_1 to i64" [segmentation.cpp:525]   --->   Operation 186 'sext' 'tmp_27' <Predicate = (tmp_26)> <Delay = 0.00>
+ST_19 : Operation 187 [1/1] (0.00ns)   --->   "%queue_0_addr_2 = getelementptr [262144 x i32]* %queue_0, i64 0, i64 %tmp_27" [segmentation.cpp:525]   --->   Operation 187 'getelementptr' 'queue_0_addr_2' <Predicate = (tmp_26)> <Delay = 0.00>
+ST_19 : Operation 188 [1/1] (3.25ns)   --->   "store i32 %ni, i32* %queue_0_addr_2, align 8" [segmentation.cpp:525]   --->   Operation 188 'store' <Predicate = (tmp_26)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_19 : Operation 189 [1/1] (0.00ns)   --->   "%queue_1_addr_2 = getelementptr [262144 x i32]* %queue_1, i64 0, i64 %tmp_27" [segmentation.cpp:526]   --->   Operation 189 'getelementptr' 'queue_1_addr_2' <Predicate = (tmp_26)> <Delay = 0.00>
+ST_19 : Operation 190 [1/1] (3.25ns)   --->   "store i32 %nj, i32* %queue_1_addr_2, align 4" [segmentation.cpp:526]   --->   Operation 190 'store' <Predicate = (tmp_26)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_19 : Operation 191 [1/1] (2.70ns)   --->   "%queue_end_3 = add nsw i32 %queue_end_1_load_1, 1" [segmentation.cpp:527]   --->   Operation 191 'add' 'queue_end_3' <Predicate = (tmp_26)> <Delay = 2.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 192 [1/1] (1.66ns)   --->   "store i32 %queue_end_3, i32* %queue_end_1" [segmentation.cpp:527]   --->   Operation 192 'store' <Predicate = (tmp_26)> <Delay = 1.66>
+
+State 20 <SV = 14> <Delay = 6.51>
+ST_20 : Operation 193 [1/2] (3.25ns)   --->   "%watershedOutput_load_3 = load i8* %watershedOutput_addr_1, align 1" [segmentation.cpp:523]   --->   Operation 193 'load' 'watershedOutput_load_3' <Predicate = (or_cond6 & tmp_23 & tmp_24 & tmp_26)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_20 : Operation 194 [1/1] (3.25ns)   --->   "store i8 %watershedOutput_load_3, i8* %watershedOutput_addr_3, align 1" [segmentation.cpp:523]   --->   Operation 194 'store' <Predicate = (or_cond6 & tmp_23 & tmp_24 & tmp_26)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 262144> <RAM>
+ST_20 : Operation 195 [1/1] (1.66ns)   --->   "br label %._crit_edge10.backedge" [segmentation.cpp:528]   --->   Operation 195 'br' <Predicate = (or_cond6 & tmp_23 & tmp_24 & tmp_26)> <Delay = 1.66>
+ST_20 : Operation 196 [1/1] (0.00ns)   --->   "%min_label_be = phi i32 [ %min_label_1, %8 ], [ %min_label, %5 ], [ %min_label_1, %_ifconv ], [ %min_label_1, %6 ], [ %min_label_1, %7 ]" [segmentation.cpp:518]   --->   Operation 196 'phi' 'min_label_be' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 197 [1/1] (0.00ns)   --->   "br label %._crit_edge10"   --->   Operation 197 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.66ns
+The critical path consists of the following:
+	'alloca' operation ('queue_end') [5]  (0 ns)
+	'store' operation of constant 0 on local variable 'queue_end' [9]  (1.66 ns)
+
+ <State 2>: 2.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', segmentation.cpp:483) [12]  (0 ns)
+	'add' operation ('i', segmentation.cpp:483) [17]  (2.12 ns)
+
+ <State 3>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:484) [24]  (0 ns)
+	'add' operation ('tmp_s', segmentation.cpp:485) [32]  (2.25 ns)
+	'getelementptr' operation ('watershedOutput_addr', segmentation.cpp:485) [34]  (0 ns)
+	'load' operation ('watershedOutput_load', segmentation.cpp:485) on array 'watershedOutput' [35]  (3.26 ns)
+
+ <State 4>: 4.73ns
+The critical path consists of the following:
+	'load' operation ('watershedOutput_load', segmentation.cpp:485) on array 'watershedOutput' [35]  (3.26 ns)
+	'icmp' operation ('tmp_4', segmentation.cpp:485) [36]  (1.48 ns)
+
+ <State 5>: 2.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', segmentation.cpp:495) [55]  (0 ns)
+	'add' operation ('i', segmentation.cpp:495) [58]  (2.12 ns)
+
+ <State 6>: 5.51ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', segmentation.cpp:496) [65]  (0 ns)
+	'add' operation ('tmp_12', segmentation.cpp:497) [72]  (2.25 ns)
+	'getelementptr' operation ('watershedOutput_addr_2', segmentation.cpp:497) [74]  (0 ns)
+	'load' operation ('watershedOutput_load_1', segmentation.cpp:497) on array 'watershedOutput' [76]  (3.26 ns)
+
+ <State 7>: 4.73ns
+The critical path consists of the following:
+	'load' operation ('watershedOutput_load_1', segmentation.cpp:497) on array 'watershedOutput' [76]  (3.26 ns)
+	'icmp' operation ('tmp_8', segmentation.cpp:497) [77]  (1.48 ns)
+
+ <State 8>: 4.63ns
+The critical path consists of the following:
+	'select' operation ('storemerge1_cast_cas', segmentation.cpp:497) [78]  (1.37 ns)
+	'store' operation (segmentation.cpp:498) of variable 'storemerge1_cast_cas', segmentation.cpp:497 on array 'dist', segmentation.cpp:494 [79]  (3.26 ns)
+
+ <State 9>: 3.26ns
+The critical path consists of the following:
+	'phi' operation ('queue_start') with incoming values : ('queue_start', segmentation.cpp:510) [88]  (0 ns)
+	'getelementptr' operation ('queue_0_addr', segmentation.cpp:508) [96]  (0 ns)
+	'load' operation ('i', segmentation.cpp:508) on array 'queue[0]', segmentation.cpp:480 [97]  (3.26 ns)
+
+ <State 10>: 5.54ns
+The critical path consists of the following:
+	'load' operation ('i', segmentation.cpp:508) on array 'queue[0]', segmentation.cpp:480 [97]  (3.26 ns)
+	'add' operation ('tmp_7', segmentation.cpp:521) [103]  (2.29 ns)
+
+ <State 11>: 3.26ns
+The critical path consists of the following:
+	'getelementptr' operation ('grayOutput_addr', segmentation.cpp:521) [105]  (0 ns)
+	'load' operation ('grayOutput_load_1', segmentation.cpp:521) on array 'grayOutput' [108]  (3.26 ns)
+
+ <State 12>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('grayOutput_load_1', segmentation.cpp:521) on array 'grayOutput' [108]  (3.26 ns)
+
+ <State 13>: 7.07ns
+The critical path consists of the following:
+	'phi' operation ('min_label', segmentation.cpp:518) with incoming values : ('min_label_1', segmentation.cpp:518) [111]  (0 ns)
+	'icmp' operation ('tmp_10', segmentation.cpp:533) [184]  (2.44 ns)
+	'select' operation ('storemerge', segmentation.cpp:537) [189]  (1.37 ns)
+	'store' operation (segmentation.cpp:534) of variable 'storemerge', segmentation.cpp:537 on array 'watershedOutput' [191]  (3.26 ns)
+
+ <State 14>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('neighbours_0_load', segmentation.cpp:515) on array 'neighbours_0' [120]  (3.26 ns)
+
+ <State 15>: 8.24ns
+The critical path consists of the following:
+	'add' operation ('ni', segmentation.cpp:515) [122]  (2.7 ns)
+	'add' operation ('tmp_28', segmentation.cpp:521) [143]  (2.29 ns)
+	'getelementptr' operation ('watershedOutput_addr_3', segmentation.cpp:518) [146]  (0 ns)
+	'load' operation ('watershedOutput_load_2', segmentation.cpp:518) on array 'watershedOutput' [148]  (3.26 ns)
+
+ <State 16>: 7.07ns
+The critical path consists of the following:
+	'load' operation ('watershedOutput_load_2', segmentation.cpp:518) on array 'watershedOutput' [148]  (3.26 ns)
+	'icmp' operation ('tmp_22', segmentation.cpp:518) [152]  (2.44 ns)
+	'select' operation ('min_label_3_min_labe', segmentation.cpp:518) [153]  (0 ns)
+	'select' operation ('min_label_1', segmentation.cpp:518) [154]  (1.37 ns)
+
+ <State 17>: 6.4ns
+The critical path consists of the following:
+	'load' operation ('grayOutput_load', segmentation.cpp:521) on array 'grayOutput' [158]  (3.26 ns)
+	'icmp' operation ('tmp_24', segmentation.cpp:521) [159]  (1.48 ns)
+	multiplexor before 'phi' operation ('min_label_be', segmentation.cpp:518) with incoming values : ('min_label_1', segmentation.cpp:518) [181]  (1.66 ns)
+
+ <State 18>: 3.26ns
+The critical path consists of the following:
+	'load' operation ('dist_load', segmentation.cpp:521) on array 'dist', segmentation.cpp:494 [162]  (3.26 ns)
+
+ <State 19>: 7.36ns
+The critical path consists of the following:
+	'load' operation ('dist_load', segmentation.cpp:521) on array 'dist', segmentation.cpp:494 [162]  (3.26 ns)
+	'icmp' operation ('tmp_26', segmentation.cpp:521) [165]  (2.44 ns)
+	multiplexor before 'phi' operation ('min_label_be', segmentation.cpp:518) with incoming values : ('min_label_1', segmentation.cpp:518) [181]  (1.66 ns)
+
+ <State 20>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('watershedOutput_load_3', segmentation.cpp:523) on array 'watershedOutput' [169]  (3.26 ns)
+	'store' operation (segmentation.cpp:523) of variable 'watershedOutput_load_3', segmentation.cpp:523 on array 'watershedOutput' [170]  (3.26 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
